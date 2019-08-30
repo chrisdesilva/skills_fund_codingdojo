@@ -80,13 +80,13 @@ const FAQ = () => {
                     <p>The interest-only payments depend on how much you borrow; the less you borrow, the less you will pay.</p>
                     <p><strong>For a 36-month $10,000 loan:</strong> The interest rate is fixed at {interestRate36} / {APR36} estimated APR. The interest-only monthly payment is approximately {IOPayment36}.</p>
                     {multipleLoanLengths && <p><strong>For a 60-month $10,000 loan:</strong> The interest rate is fixed at {interestRate60} / {APR60} estimated APR. The interest-only monthly payment is approximately {IOPayment60}.</p>}
-                    <p>Please see terms in "More Info On Terms" above.</p>
+                    <p>Please see terms in "Term Details" above.</p>
                     <p className="mb-0 pb-4"><strong>Please note:</strong> The Annual Percentage Rate (APR) is estimated and may change slightly based on the loan type, origination fee, and approximate program length. To learn how an Annual Percentage Rate (APR) is calculated, <a className="text-primary" target="_blank" href="https://skills.fund/resources/how-is-an-apr-calculated" rel="noreferrer noopener">visit our blog.</a></p>
                </Collapse>
 
           <div onClick={() => showq6(!q6)}><h3 className="text-lg uppercase text-primary flex items-center cursor-pointer"><span className="text-sm"><FaAngleDown /></span>will i get charged any fees for taking out this loan?</h3></div>
                <Collapse isOpened={q6} springConfig={{stiffness: 150, damping: 30}}>
-                    <p>You will be charged an origination fee of 4.0%. This amount will be added to the amount of tuition you borrow and is included in the total loan principal amount you finance. This fee helps cover the administrative fees associated with originating the loan and is charged by our partner bank. Please see terms in "More Info on Terms" above.</p>
+                    <p>You will be charged an origination fee of 4.0%. This amount will be added to the amount of tuition you borrow and is included in the total loan principal amount you finance. This fee helps cover the administrative fees associated with originating the loan and is charged by our partner bank. Please see terms in "Term Details" above.</p>
                     <p className="mb-0 pb-4"><strong>Please note:</strong> This fee is already reflected in the APR outlined above and in the loan calculator. Interested in learning more about your interest rate vs. APR? Check out our blog post <a className="text-primary" target="_blank" href="https://skills.fund/resources/apr-versus-interest-rates-whats-the-difference" rel="noreferrer noopener">here.</a></p>
                </Collapse>
 
