@@ -59,6 +59,10 @@
   transform: scale(1.05)
 }
 
+.yotpo .yotpo-testimonials-btn {
+  background-color: #9d1996 !important;
+}
+
 html {
   font-family: 'Roboto Condensed', sans-serif;
   -ms-text-size-adjust: 100%;
