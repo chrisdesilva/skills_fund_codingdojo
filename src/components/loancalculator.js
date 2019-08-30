@@ -9,21 +9,22 @@ const LoanCalculator = () => {
     const [loanAmount, setLoanAmount] = useState(10000)
     const [loanOptions, showLoanOptions] = useState(false)
     const minLoanAmt = 2000
-    const interestRate36 = 9.49
-    const interestRate60 = 11.46
+    const interestRate36 = 8.99
+    const interestRate60 = 10.99
     const origFee = 0.04
     const multiPrograms = true // only true if there are multiple programs
+    const [multiMetros, showMetros] = useState(true) // true if there are multiple metros that have DIFFERENT max loan amounts for the SAME PROGRAM
     const [interestPayment, setInterestPayment] = useState({ payment36: null, payment60: null })
     const [monthlyPayment, setMonthlyPayment] = useState({ payment36: null, payment60: null })
     const [loanType, setLoanType] = useState('0') // default to 0 for interest-only, 1 for immediate repayment
     const [loanInformation, setLoanInformation] = useState({ 
-        maxLoanAmt: 37400,
+        maxLoanAmt: 19495,
         loanTerm36: true, // only true if 36 month option is available
         loanTerm60: true, // only true if 60 month option is available
         k: 5, // (program length in weeks / 4) + 2 -- round program length down to nearest number divisible by 4 (ie. 27 week program rounds down to 24, 24 / 4 + 6 = 12, k = 12)
         '0': { // interest-only
-            apr36: 11.52, 
-            apr60: 12.92
+            apr36: 11.16, 
+            apr60: 12.51
         },
         '1': null
     })
@@ -55,56 +56,206 @@ const LoanCalculator = () => {
     const selectProgram = e => {
         let program = e.target.value
         switch(program) {
-            case "CORE Program": // use this info for default case at bottom
+            case "Onsite Bootcamp": // use this info for default case at bottom
                 setLoanInformation({
-                    maxLoanAmt: 25500,
-                    loanTerm36: true,
-                    loanTerm60: true,
-                    '0': { 
-                        k: 7, 
-                        apr36: 11.52, 
-                        apr60: 12.92
-                    },
-                    '1': null
-                })
-                setLoanType('0')
-                break;
-            case "HUNT Program": 
-                setLoanInformation({
-                    maxLoanAmt: 25400,
+                    maxLoanAmt: 19495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
                         k: 5, 
-                        apr36: 11.67, 
-                        apr60: 12.99
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                showMetros(true)
+                setLoanType('0')
+                break;
+            case "Online Full-Time": 
+                setLoanInformation({
+                    maxLoanAmt: 14995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                showMetros(false)
+                setLoanType('0')
+                break;
+            case "Online Part-Time": 
+                setLoanInformation({
+                    maxLoanAmt: 9995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': {
+                        k: 6,
+                        apr36: 11.08,
+                        apr60: 12.48
+                    },
+                    '1': null
+                })
+                showMetros(false)
+                setLoanType('0')
+                break;
+            default: // info below needs to match info from first program
+                setLoanInformation({
+                    maxLoanAmt: 19495,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
                     },
                     '1': null
                 })
                 setLoanType('0')
                 break;
-            case "PATH Program": 
+        }
+    }
+
+    const selectMetro = e => {
+        let metro = e.target.value
+        switch(metro) {
+            case "Arlington, VA": // use this info for default case at bottom
                 setLoanInformation({
-                    maxLoanAmt: 23400,
-                    loanTerm36: true,
-                    loanTerm60: true,
-                    '0': null,
-                    '1': {
-                        apr36: 12.20,
-                        apr60: 13.19
-                    }
-                })
-                setLoanType('1')
-                break;
-            default: // info below needs to match info from first program
-                setLoanInformation({
-                    maxLoanAmt: 25500,
+                    maxLoanAmt: 19495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
-                        k: 7, 
-                        apr36: 11.52, 
-                        apr60: 12.92
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Berkeley (East Bay), CA": 
+                setLoanInformation({
+                    maxLoanAmt: 19995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Chicago, IL": 
+                setLoanInformation({
+                    maxLoanAmt: 18995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': {
+                        k: 6,
+                        apr36: 11.16,
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Dallas, TX": // use this info for default case at bottom
+                setLoanInformation({
+                    maxLoanAmt: 17495,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Los Angeles, CA": 
+                setLoanInformation({
+                    maxLoanAmt: 17995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Orange County, CA": 
+                setLoanInformation({
+                    maxLoanAmt: 17995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': {
+                        k: 6,
+                        apr36: 11.16,
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Seattle, WA": // use this info for default case at bottom
+                setLoanInformation({
+                    maxLoanAmt: 19995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Silicon Valley, CA": 
+                setLoanInformation({
+                    maxLoanAmt: 20995,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            case "Tulsa, OK": 
+                setLoanInformation({
+                    maxLoanAmt: 16495,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': {
+                        k: 6,
+                        apr36: 11.16,
+                        apr60: 12.51
+                    },
+                    '1': null
+                })
+                setLoanType('0')
+                break;
+            default: // info below needs to match info from first program
+                setLoanInformation({
+                    maxLoanAmt: 19495,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': { 
+                        k: 5, 
+                        apr36: 11.16, 
+                        apr60: 12.51
                     },
                     '1': null
                 })
@@ -119,20 +270,43 @@ const LoanCalculator = () => {
                 <h3 className="text-center">Calculate Your Monthly Payments</h3>
 
                 {/* UPDATE LOAN AMOUNTS AND COST OF LIVING BY PROGRAM BELOW */}
-                <p className="text-center">Choose the loan amount that works best for you. Borrow up to $20,000 for the CORE Program tuition, $7,400 for optional certification, and $10,000 for cost of living. Borrow up to $12,000 for the HUNT Program tuition, $7,400 for optional certification, and $6,000 for cost of living. Borrow up to $16,000 for the PATH Program tuition and $7,400 for optional certification.</p>
+                <p className="text-center">Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, and up to $9,995 for the Online Part-Time Bootcamp tuition.</p>
                 <LoanCalcPaymentTable />
 
+                <div className="flex flex-col justify-center w-full md:w-1/3">
+                
                 {/* ADD OR REMOVE PROGRAMS BELOW */}
                 {multiPrograms &&
-                    <div className="flex flex-col justify-center w-full md:w-1/3">
+                    <>
                         <label className="text-xs text-center">Select a Program:</label>
                         <select className="rounded border-2 border-primary mb-5 bg-white text-primary text-center" onChange={selectProgram}>
-                            <option value="CORE Program">CORE Program</option>
-                            <option value="HUNT Program">HUNT Program</option>
-                            <option value="PATH Program">PATH Program</option>
+                            <option value="Onsite Bootcamp">Onsite Bootcamp</option>
+                            <option value="Online Full-Time">Online Full-Time</option>
+                            <option value="Online Part-Time">Online Part-Time</option>
                         </select>
-                    </div>
+                    </>
                 }
+
+                {/* ADD OR REMOVE METROS BELOW */}
+                    <Collapse isOpened={multiMetros} springConfig={{stiffness: 150, damping: 30}}>
+                        <div className="flex flex-col">
+                            <label className="text-xs text-center">Select a Metro:</label>
+                            <select className="rounded border-2 border-primary mb-5 bg-white text-primary text-center" onChange={selectMetro}>
+                                <option value="Arlington, VA">Arlington, VA</option>
+                                <option value="Berkeley (East Bay), CA">Berkeley (East Bay), CA</option>
+                                <option value="Chicago, IL">Chicago, IL</option>
+                                <option value="Dallas, TX">Dallas, TX</option>
+                                <option value="Los Angeles, CA">Los Angeles, CA</option>
+                                <option value="Orange County, CA">Orange County, CA</option>
+                                <option value="Seattle, WA">Seattle, WA</option>
+                                <option value="Silicon Valley, CA">Silicon Valley, CA</option>
+                                <option value="Tulsa, OK">Tulsa, OK</option>
+                            </select>
+                        </div>
+                    </Collapse>
+                
+                </div>
+
 
                 {/* DROPDOWN MENU FOR LOAN TYPES */}
                 {loanInformation['0'] && loanInformation['1'] &&
@@ -151,11 +325,11 @@ const LoanCalculator = () => {
                     <input type="number" onChange={updateLoanAmount} className="rounded border-2 border-primary p-3 mb-5 text-primary text-center text-2xl" maxLength="6" placeholder={placeholder} />
                 </div>
 
-                {minLoanAmt > loanAmount || loanAmount > loanInformation.maxLoanAmt ? 
-                    <p className="text-red-500 text-xs">Please enter a number between {minLoanAmt} and {loanInformation.maxLoanAmt}</p> 
-                        : 
-                    <button className="opacityApply uppercase bg-primary p-3 mb-4 lg:ml-4 w-48 rounded-full shadow-lg text-white" onClick={calculateMonthlyPayment}>Calculate payments</button>    
-                }
+                <Collapse isOpened={minLoanAmt > loanAmount || loanAmount > loanInformation.maxLoanAmt}>
+                    <p className="text-red-500 text-xs m-0 pb-4">Please enter a number between {minLoanAmt} and {loanInformation.maxLoanAmt}</p>
+                </Collapse>
+                <button className="opacityApply uppercase bg-primary p-3 mb-4 lg:ml-4 w-48 rounded-full shadow-lg text-white" onClick={calculateMonthlyPayment}>Calculate payments</button>
+
                 <p className="m-0 text-center">Students may borrow from ${minLoanAmt} to ${loanInformation.maxLoanAmt}</p>
                 {loanType === "0" && <p className="text-xs text-center hidden lg:inline mb-2">Make interest-only payments while in the program. Two months after completion, begin full payments.</p>}
                 {loanType === "1" && <p className="text-xs text-center hidden lg:inline mb-2">Start making full payments (interest + principal) about one month after disbursement.</p>}

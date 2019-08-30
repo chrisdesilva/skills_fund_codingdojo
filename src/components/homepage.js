@@ -29,14 +29,6 @@ class Homepage extends React.Component {
         this.threesteps = React.createRef();
         this.apply = React.createRef();
       }
-    
-      // scrollToContent = () => {
-      //   this.threesteps.current.scrollIntoView({ behavior: 'smooth' });
-      //   ReactGA.event({
-      //     category: 'How It Works Button',
-      //     action: 'click'
-      //   })
-      // }
 
       scrollToApply = () => {
         this.apply.current.scrollIntoView({ behavior: 'smooth' });

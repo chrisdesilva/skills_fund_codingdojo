@@ -3,7 +3,7 @@ import Homepage from '../components/homepage'
 import ReactGA from 'react-ga'
 import ReactPixel from 'react-facebook-pixel'
 
-const trackingId = 'UA-68312423-14'
+const trackingId = 'UA-99765669-6'
 ReactGA.initialize(trackingId, {
   debug: false,
   titleCase: false,
@@ -12,13 +12,13 @@ ReactGA.initialize(trackingId, {
   }
 })
 
-const netlifyFormName = 'secureset_contact'
+const netlifyFormName = 'codingdojo_contact'
 
 const IndexPage = () => {
 
   const [IP, setIP] = useState('')
-  const pageUri = 'secureset.skills.fund'
-  const schoolName = 'SecureSet Academy'
+  const pageUri = 'codingdojo.skills.fund'
+  const schoolName = 'Coding Dojo'
 
     // Get IP address from client for Hubspot analytics
     async function fetchIP() {

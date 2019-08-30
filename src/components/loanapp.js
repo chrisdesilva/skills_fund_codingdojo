@@ -11,22 +11,19 @@ const LoanApp = React.forwardRef((props, ref) => {
     const [submitted, isSubmitted] = useState(false)
     const [disclaimers, toggleDisclaimers] = useState(false)
     const [programInfo, setProgramInfo] = useState({
-        programName: 'CORE Program',
+        programName: 'Onsite Bootcamp',
         active: { 
             program1: false,
             program2: false,
-            program3: false,
-            program4: false,
-            program5: false,
-            program6: false,
+            program3: false
         }
     })
-    const [loanUrl, setLoanUrl] = useState(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSCORE17`) // if multiple programs, set lenderCode to first program option
-    const formID = '84a22c21-7ecc-401e-a742-2bc6b7c068ad' // get form id for apply now
+    const [loanUrl, setLoanUrl] = useState(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKCD17`) // if multiple programs, set lenderCode to first program option
+    const formID = 'c722ff33-00c5-4a56-8849-c4982db81f44' // get form id for apply now
     const costOfLiving = true // set to false of cost of living is not available
     const multiplePrograms = true // set to false if there is only one program
-    const onlinePrograms = false // set to true if there is at least one online/remote program offered
-    const schoolHQState = 'NY' // two letter abbreviation for school headquarters state
+    const onlinePrograms = true // set to true if there is at least one online/remote program offered
+    const schoolHQState = 'WA' // two letter abbreviation for school headquarters state
 
     const activeClass = "cursor-pointer border-2 rounded border-black text-center py-2 text-white bg-primary mb-2" // highlights selected option in loan app form
     const inactiveClass = "cursor-pointer border-2 rounded border-black text-center py-2 mb-2"
@@ -40,101 +37,47 @@ const LoanApp = React.forwardRef((props, ref) => {
         switch(programNumber) {
             case 1: // info should match default
                 setProgramInfo({
-                    programName: 'CORE Program', 
+                    programName: 'Onsite Bootcamp', 
                     active: {
                         program1: !programInfo.active.program1, 
                         program2: false, 
-                        program3: false,
-                        program4: false,
-                        program5: false,
-                        program6: false,
+                        program3: false
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSCORE17`) // update lenderCode with market segment code from LP
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKCD17`) // update lenderCode with market segment code from LP
                 break;
             case 2:
                 setProgramInfo({
-                    programName: 'CORE Program + Cert', 
+                    programName: 'Online Full-Time Bootcamp', 
                     active: {
                         program1: false, 
                         program2: !programInfo.active.program2, 
-                        program3: false,
-                        program4: false,
-                        program5: false,
-                        program6: false,
+                        program3: false
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSCOCE17`) // update lenderCode with market segment code from LP
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDOJOO19`) // update lenderCode with market segment code from LP
                 break;
             case 3:
                 setProgramInfo({
-                    programName: 'PATH Program', 
+                    programName: 'Online Part-Time Bootcamp', 
                     active: {
                         program1: false, 
                         program2: false, 
-                        program3: !programInfo.active.program3,
-                        program4: false,
-                        program5: false,
-                        program6: false,
+                        program3: !programInfo.active.program3
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSCOEV17`) // update lenderCode with market segment code from LP
-                break;
-            case 4:
-                setProgramInfo({
-                    programName: 'PATH Program + Cert', 
-                    active: {
-                        program1: false, 
-                        program2: false, 
-                        program3: false,
-                        program4: !programInfo.active.program4,
-                        program5: false,
-                        program6: false,
-                    }
-                })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSCCEV17`) // update lenderCode with market segment code from LP
-                break;
-            case 5:
-                setProgramInfo({
-                    programName: 'HUNT Program', 
-                    active: {
-                        program1: false, 
-                        program2: false, 
-                        program3: false,
-                        program4: false,
-                        program5: !programInfo.active.program5,
-                        program6: false,
-                    }
-                })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSHUNT17`) // update lenderCode with market segment code from LP
-                break;
-            case 6:
-                setProgramInfo({
-                    programName: 'HUNT Program + Cert', 
-                    active: {
-                        program1: false, 
-                        program2: false, 
-                        program3: false,
-                        program4: false,
-                        program5: false,
-                        program6: !programInfo.active.program6,
-                    }
-                })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSHUCE17`) // update lenderCode with market segment code from LP
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKDOJON18`) // update lenderCode with market segment code from LP
                 break;
             default: // info should match case 1
                 setProgramInfo({ 
-                    programName: 'CORE Program', 
+                    programName: 'Onsite Bootcamp', 
                     active: {
                         program1: !programInfo.active.program1, 
                         program2: false, 
-                        program3: false,
-                        program4: false,
-                        program5: false,
-                        program6: false,
+                        program3: false
                     }
                 })
-                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SASSCORE17`)
+                setLoanUrl(`https://sf.privateloan.studentloan.org/external/LoanApplication.do?lenderCode=SKCD17`)
                 break;
         }
     }
@@ -182,7 +125,7 @@ const LoanApp = React.forwardRef((props, ref) => {
             "value": "Student"
             },
             {
-            "name": "select_a_secureset_program", // update school name to match form field on Hubspot
+            "name": "select_a_codingdojo_program", // update school name to match form field on Hubspot
             "value": `${programInfo.programName}`
             },
             {
@@ -240,12 +183,9 @@ const LoanApp = React.forwardRef((props, ref) => {
                         <p className="text-center text-sm">Select a {props.schoolName} program</p>
                         
                         {/* WHEN ADDING AND REMOVING PROGRAMS, PAY ATTENTION TO THE NUMBER AT THE END OF programInfo.active and handleProgramSelect */}
-                        <p className={programInfo.active.program1 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(1)}>CORE Program</p>
-                        <p className={programInfo.active.program2 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(2)}>CORE Program + Cert</p>
-                        <p className={programInfo.active.program3 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(3)}>PATH Program</p>
-                        <p className={programInfo.active.program4 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(4)}>PATH Program + Cert</p>
-                        <p className={programInfo.active.program5 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(5)}>HUNT Program</p>
-                        <p className={programInfo.active.program6 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(6)}>HUNT Program + Cert</p>
+                        <p className={programInfo.active.program1 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(1)}>Onsite Bootcamp</p>
+                        <p className={programInfo.active.program2 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(2)}>Online Full-Time Bootcamp</p>
+                        <p className={programInfo.active.program3 ? activeClass : inactiveClass} onClick={() => handleProgramSelect(3)}>Online Part-Time Bootcamp</p>
                     </div>
                 }
                 <div className="hidden">
@@ -260,12 +200,12 @@ const LoanApp = React.forwardRef((props, ref) => {
             </form>
             </div>
             {onlinePrograms && 
-                <p className="px-8">
-                    <strong>ATTENTION ONLINE STUDENTS: </strong>When entering "Applicant Information" within your loan application, <strong>please select {schoolHQState} as "the state of the school you plan to attend."</strong>
-                </p>
-            }
+                    <p className="m-0 text-base pt-8">
+                        <strong className="m-0">ATTENTION ONLINE STUDENTS: </strong>When entering "Applicant Information" within your loan application, <strong className="m-0">please select {schoolHQState} as "the state of the school you plan to attend."</strong>
+                    </p>
+                }
             <div className="px-8 text-sm">
-                <p className="text-center mt-8">If you are a cosigner, begin the addendum now by clicking <a className="text-primary" href="https://sf.privateloan.studentloan.org/Cosigner.do?execution=e1s1" rel="noreferrer noopener" target="_blank">here</a>.</p>
+                <p className="text-center pt-8">If you are a cosigner, begin the addendum now by clicking <a className="text-primary" href="https://sf.privateloan.studentloan.org/Cosigner.do?execution=e1s1" rel="noreferrer noopener" target="_blank">here</a>.</p>
                 <p className="text-center text-primary cursor-pointer font-bold" onClick={() => toggleDisclaimers(!disclaimers)}>Disclaimers</p>
             <Collapse isOpened={disclaimers} springConfig={{stiffness: 150, damping: 40}}>
                 <div>

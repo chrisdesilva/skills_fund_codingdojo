@@ -5,33 +5,20 @@ import ImmRepaymentTerms from './immrepaymentterms'
 
 // update with school-specific info
 const schoolInfo = {
-    interestRate36: '9.49%',
-    interestRate60: '11.46%',
+    interestRate36: '8.99%',
+    interestRate60: '10.99%',
+    APRRange36: '11.08 - 11.16%',
+    APRRange60: '12.48 - 12.51%',
     interestOnly: [{
-        programName: 'CORE Program with/without the certification and the HUNT Program with the certification',
-        APR36: '11.52%',
-        financeCharge36: '$2,567.11',
-        IOPayment36: '$82.25',
-        FullMonthlyPayment36: '$333.09',
-        APR60: '12.92%',
-        financeCharge60: '$4,406.10',
-        IOPayment60: '$99.32',
-        FullMonthlyPayment60: '$228.51',
-        LoanExampleAmt: '$10,000',
-        LoanExampleOFeeAmt: '$400',
-        LoanExampleAmtPlusOFee: '$10,4000',
-        programLength: '5' // program length in months
-    },
-    {
-        programName: 'HUNT Program without the certification',
-        APR36: '11.67%',
-        financeCharge36: '$2,402.62',
-        IOPayment36: '$82.25',
-        FullMonthlyPayment36: '$333.09',
-        APR60: '12.99%',
-        financeCharge60: '$4,207.46',
-        IOPayment60: '$99.32',
-        FullMonthlyPayment60: '$228.51',
+        programName: '',
+        APR36: '11.16%',
+        financeCharge36: '$2,293.64',
+        IOPayment36: '$77.91',
+        FullMonthlyPayment36: '$330.67',
+        APR60: '12.51%',
+        financeCharge60: '$4,040.39',
+        IOPayment60: '$95.25',
+        FullMonthlyPayment60: '$226.07',
         LoanExampleAmt: '$10,000',
         LoanExampleOFeeAmt: '$400',
         LoanExampleAmtPlusOFee: '$10,400',
@@ -51,7 +38,7 @@ const schoolInfo = {
     }]
 }
 const multipleLoanLengths = true // true if both 36 and 60 month options are available
-const multipleLoanTypes = true // true if both IR and IO are available
+const multipleLoanTypes = false // true if both IR and IO are available
 
 const TermInfo = props => (
     <div className="text-center mx-2 lg:mx-10 p-8 shadow rounded">
@@ -66,6 +53,8 @@ const TermInfo = props => (
                 IOAPR60={schoolInfo.interestOnly[0].APR60}
                 IRAPR36={schoolInfo.immediateRepayment[0].APR36}
                 IRAPR60={schoolInfo.immediateRepayment[0].APR60}
+                APRRange36={schoolInfo.APRRange36}
+                APRRange60={schoolInfo.APRRange60}
             />
 
             {schoolInfo.interestOnly.map(school => {

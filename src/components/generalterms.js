@@ -23,28 +23,28 @@ const GeneralTerms = props => (
                     </tr>
                     <tr>
                         <td className="text-center">Interest Rate (2)</td>
-                        <td className="text-center" colSpan={props.multipleLoanLengths ? undefined : "2"}>Fixed<br /> {props.interestRate36} interest rate, {props.IOAPR36}{props.multipleLoanTypes && <span> - {props.IRAPR36}</span>} estimated APR</td> 
-                        {props.multipleLoanLengths && <td className="text-center">Fixed<br /> {props.interestRate60} interest rate, {props.IOAPR60}{props.multipleLoanTypes && <span> - {props.IRAPR60}</span>} estimated APR</td>} 
+                        <td className="text-center" colSpan={props.multipleLoanLengths ? undefined : "2"}>Fixed<br /> {props.interestRate36} interest rate, {props.APRRange36} estimated APR</td> 
+                        {props.multipleLoanLengths && <td className="text-center">Fixed<br /> {props.interestRate60} interest rate, {props.APRRange60} estimated APR</td>} 
                     </tr>
                     <tr>
                         <td className="text-center bg-gray-100">Capitalization of Interest</td>
-                        <td className="text-left bg-gray-100" colSpan="2"><strong>Interest-Only Loans:</strong> Interest not capitalized unless payments not made. 
+                        <td className="text-center bg-gray-100" colSpan="2"><strong>Interest-Only Loans:</strong> Interest not capitalized unless payments not made. 
                         {props.multipleLoanTypes && <span><br/><br/><strong>Immediate Repayment Loans:</strong> Interest not capitalized unless payments not made.</span>} </td>
                     </tr>
                     <tr>
                         <td className="text-center">Payments Required While Enrolled?</td>
-                        <td className="text-left" colSpan="2"><strong>Interest-Only Loans:</strong> Monthly interest payments are required.
+                        <td className="text-center" colSpan="2"><strong>Interest-Only Loans:</strong> Monthly interest payments are required.
                         {props.multipleLoanTypes && <span><br/><br/><strong>Immediate Repayment Loans:</strong> Yes, full payments (interest + principal) are mandatory roughly one month after loan is disbursed.</span>} </td>
                     </tr>
                     <tr>
                         <td className="text-center bg-gray-100">Grace Period</td>
-                        <td className="text-left bg-gray-100" colSpan="2">Two-month period after the in-school period, following official program completion, and before interest and principal repayment begins. (3)<br /><br />
+                        <td className="text-center bg-gray-100" colSpan="2">Two-month period after the in-school period, following official program completion, and before interest and principal repayment begins. (3)<br /><br />
                         <strong>Interest-Only Loans:</strong> Interest-only payments are required while in school and in the grace period.
                         {props.multipleLoanTypes && <span><br/><br/><strong>Immediate Repayment Loans:</strong> None, full repayments start roughly one month after loan is disbursed.</span> }</td>
                     </tr>
                     <tr>
                         <td className="text-center">Post-Grace Period</td>
-                        <td className="text-left" colSpan="2"><strong>Interest-Only Loans:</strong> Full repayments (principal and interest) are required.
+                        <td className="text-center" colSpan="2"><strong>Interest-Only Loans:</strong> Full repayments (principal and interest) are required.
                         {props.multipleLoanTypes && <span><br/><br/><strong>Immediate Repayment Loans:</strong> Full repayments (principal and interest) are required.</span> }</td>
                     </tr>
                     <tr>
@@ -80,7 +80,7 @@ const GeneralTerms = props => (
                         <td className="text-center font-bold bg-gray-100">Interest Rate (2)</td>
                     </tr>
                     <tr>
-                        <td className="text-center">Fixed<br /> {props.interestRate36} interest rate,<br/> {props.IOAPR36}{props.multipleLoanTypes && <span> - {props.IRAPR36}</span>} estimated APR</td> 
+                        <td className="text-center">Fixed<br /> {props.interestRate36} interest rate,<br/> {props.APRRange36} estimated APR</td> 
                     </tr>
                     <tr>
                         <td className="text-center font-bold bg-gray-100">Capitalization of Interest</td>
@@ -134,7 +134,7 @@ const GeneralTerms = props => (
                         <td className="text-center font-bold bg-gray-100">Interest Rate (2)</td>
                     </tr>
                     <tr>
-                        <td className="text-center">Fixed<br /> {props.interestRate60} interest rate,<br/> {props.IOAPR60}{props.multipleLoanTypes && <span> - {props.IOAPR60}</span>} estimated APR</td> 
+                        <td className="text-center">Fixed<br /> {props.interestRate60} interest rate,<br/> {props.APRRange60} estimated APR</td> 
                     </tr>
                     <tr>
                         <td className="text-center font-bold bg-gray-100">Capitalization of Interest</td>
