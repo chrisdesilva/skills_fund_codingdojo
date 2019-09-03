@@ -175,7 +175,7 @@ const LoanApp = React.forwardRef((props, ref) => {
                     <img className="w-auto" src={marching} alt="People marching and carrying flags" loading="lazy"/>
                 </div>
             {/* update form fields as necessary */}
-            <form className="SecureSet_apply_now program-apply flex flex-col items-center" onSubmit={handleSubmit}>
+            <form className="codingdojo_apply_now program-apply flex flex-col items-center" onSubmit={handleSubmit}>
                 <label htmlFor="email">Email address</label>
                 <input className="border-2 rounded border-primary text-center py-2 mb-4 w-64" type="email" name="email" placeholder="Enter your email address" onChange={handleChange} value={email} required />
                 {multiplePrograms && 
