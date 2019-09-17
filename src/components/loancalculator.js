@@ -270,7 +270,7 @@ const LoanCalculator = () => {
                 <h3 className="text-center">Calculate Your Monthly Payments</h3>
 
                 {/* UPDATE LOAN AMOUNTS AND COST OF LIVING BY PROGRAM BELOW */}
-                <p className="text-center">Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, and up to $9,995 for the Online Part-Time Bootcamp tuition.<strong>Please note:</strong>The cost of living portion of your loan may not exceed the amount requested for tuition.</p>
+                <p className="text-center">Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, and up to $9,995 for the Online Part-Time Bootcamp tuition. <br/><strong>Please note: </strong>The cost of living portion of your loan may not exceed the amount requested for tuition.</p>
                 <LoanCalcPaymentTable />
 
                 <div className="flex flex-col justify-center w-full md:w-1/3">
