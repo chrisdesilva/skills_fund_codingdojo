@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Reviews = () => (
+const Reviews = () => (
     <div class="yotpo yotpo-reviews-carousel"
  data-background-color="transparent"
  data-mode="top_rated"
@@ -11,3 +11,5 @@ export const Reviews = () => (
  data-autoplay-speed="3000"
  data-show-navigation="1">&nbsp;</div>
 )
+
+export default Reviews
