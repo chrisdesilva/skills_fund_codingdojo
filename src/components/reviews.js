@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Reviews = () => (
-    <div class="yotpo yotpo-reviews-carousel mt-5 mb-10"
+    <div className="yotpo yotpo-reviews-carousel mt-5 mb-10"
  data-background-color="transparent"
  data-mode="top_rated"
  data-type="site"
