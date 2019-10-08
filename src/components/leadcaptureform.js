@@ -60,6 +60,7 @@ const LeadCaptureForm = props => {
         .catch(error => console.log('error: ', error))
         showThankYou(true)
         setEmail('')
+        props.trackGA()
     }
 
     return (
