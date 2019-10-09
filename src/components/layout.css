@@ -37,12 +37,27 @@
   transition: all 1000ms;
 }
 
+.popup button {
+  position: absolute;
+  right: 10px;
+}
+
 @media screen and (max-width: 768px){
   .popup {
     flex-direction: column;
     text-align: center;
-    padding: 0 2rem;
-    height: 250px;
+    padding: 1rem 2rem;
+    height: 200px;
+  }
+
+  .popup button {
+    left: calc(50% - .5rem);
+    bottom: 0;
+    padding-bottom: 10px;
+  }
+
+  .popup--getReady {
+    display: none;
   }
 }
 

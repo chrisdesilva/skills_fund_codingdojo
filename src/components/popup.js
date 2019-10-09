@@ -89,7 +89,7 @@ const Popup = props => {
 
     return (
         <div className={isPopupVisible ? "popup" : "popup hidePopup"}>
-            {!thankYou && <div className="flex flex-col items-center justify-center"><p className="m-0">Get ready for upcoming start dates at {props.schoolName}! </p><p className="m-0">Plan your funding with Skills Fund. We'll send you a step-by-step guide to paying for your program.</p></div>}
+            {!thankYou && <div className="flex flex-col items-center justify-center"><p className="m-0 popup--getReady">Get ready for upcoming start dates at {props.schoolName}! </p><p className="m-0">Plan your funding with Skills Fund. We'll send you a step-by-step guide to paying for your program.</p></div>}
             <form className="popup_capture program-apply flex flex-col lg:flex-row m-0 items-center" onSubmit={handleSubmit}>
                 {!thankYou && <input className="border-2 rounded border-primary text-left p-2 w-64 text-black" type="email" name="email" placeholder="Enter your email address" onChange={handleChange} value={email} required />}
                 <div className="hidden">
