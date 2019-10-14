@@ -12,6 +12,10 @@ ReactGA.initialize(trackingId, {
   }
 })
 
+ReactGA.ga('send', 'pageview', {
+  'Branch': process.env.BRANCH
+});
+
 const netlifyFormName = 'codingdojo_contact'
 
 const IndexPage = () => {
