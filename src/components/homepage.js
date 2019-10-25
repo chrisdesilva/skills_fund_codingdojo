@@ -35,29 +35,29 @@ class Homepage extends React.Component {
 
       scrollToApply = () => {
         this.apply.current.scrollIntoView({ behavior: 'smooth' });
-        ReactGA.event({
-          category: `Apply Now Button ${this.props.schoolName}`,
-          action: 'click',
-          label: 'banner'
-        })
+        // ReactGA.event({
+        //   category: `Apply Now Button ${this.props.schoolName}`,
+        //   action: 'click',
+        //   label: 'banner'
+        // })
       }
 
       scrollToApply2 = () => {
         this.apply.current.scrollIntoView({ behavior: 'smooth' });
-        ReactGA.event({
-          category: `Apply Now Button ${this.props.schoolName}`,
-          action: 'click',
-          label: 'getting started'
-        })
+        // ReactGA.event({
+        //   category: `Apply Now Button ${this.props.schoolName}`,
+        //   action: 'click',
+        //   label: 'getting started'
+        // })
       }
 
       scrollToApply3 = () => {
         this.apply.current.scrollIntoView({ behavior: 'smooth' });
-        ReactGA.event({
-          category: `Apply Now Button ${this.props.schoolName}`,
-          action: 'click',
-          label: 'footer'
-        })
+        // ReactGA.event({
+        //   category: `Apply Now Button ${this.props.schoolName}`,
+        //   action: 'click',
+        //   label: 'footer'
+        // })
       }
 
       trackPopup = () => {
