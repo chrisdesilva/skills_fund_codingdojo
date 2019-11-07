@@ -58,7 +58,7 @@ const LoanCalculator = () => {
         switch(program) {
             case "Onsite Bootcamp": // use this info for default case at bottom
                 setLoanInformation({
-                    maxLoanAmt: 19495,
+                    maxLoanAmt: 17995,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -103,7 +103,7 @@ const LoanCalculator = () => {
                 break;
             default: // info below needs to match info from first program
                 setLoanInformation({
-                    maxLoanAmt: 19495,
+                    maxLoanAmt: 17995,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -123,7 +123,7 @@ const LoanCalculator = () => {
         switch(metro) {
             case "Arlington, VA": // use this info for default case at bottom
                 setLoanInformation({
-                    maxLoanAmt: 19495,
+                    maxLoanAmt: 17995,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -137,7 +137,7 @@ const LoanCalculator = () => {
                 break;
             case "Berkeley (East Bay), CA": 
                 setLoanInformation({
-                    maxLoanAmt: 19995,
+                    maxLoanAmt: 18495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -151,7 +151,7 @@ const LoanCalculator = () => {
                 break;
             case "Chicago, IL": 
                 setLoanInformation({
-                    maxLoanAmt: 18995,
+                    maxLoanAmt: 17495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': {
@@ -165,7 +165,7 @@ const LoanCalculator = () => {
                 break;
             case "Dallas, TX": // use this info for default case at bottom
                 setLoanInformation({
-                    maxLoanAmt: 17495,
+                    maxLoanAmt: 15995,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -179,7 +179,7 @@ const LoanCalculator = () => {
                 break;
             case "Los Angeles, CA": 
                 setLoanInformation({
-                    maxLoanAmt: 17995,
+                    maxLoanAmt: 16495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -193,7 +193,7 @@ const LoanCalculator = () => {
                 break;
             case "Orange County, CA": 
                 setLoanInformation({
-                    maxLoanAmt: 17995,
+                    maxLoanAmt: 16495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': {
@@ -207,7 +207,7 @@ const LoanCalculator = () => {
                 break;
             case "Seattle, WA": // use this info for default case at bottom
                 setLoanInformation({
-                    maxLoanAmt: 19995,
+                    maxLoanAmt: 18495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -221,7 +221,7 @@ const LoanCalculator = () => {
                 break;
             case "Silicon Valley, CA": 
                 setLoanInformation({
-                    maxLoanAmt: 20995,
+                    maxLoanAmt: 19495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 
@@ -235,7 +235,7 @@ const LoanCalculator = () => {
                 break;
             case "Tulsa, OK": 
                 setLoanInformation({
-                    maxLoanAmt: 16495,
+                    maxLoanAmt: 14995,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': {
@@ -249,7 +249,7 @@ const LoanCalculator = () => {
                 break;
             default: // info below needs to match info from first program
                 setLoanInformation({
-                    maxLoanAmt: 19495,
+                    maxLoanAmt: 17995,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': { 

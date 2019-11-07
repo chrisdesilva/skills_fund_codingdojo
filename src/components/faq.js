@@ -39,7 +39,7 @@ const FAQ = () => {
           <Collapse isOpened={q1} springConfig={{stiffness: 150, damping: 30}}>
                <p>The maximum amount you can borrow will depend on your program. You can finance your tuition and cost of living expenses.</p>
                <ul>
-                    <li><strong>For Coding Dojo's Onsite Bootcamp,</strong> you may borrow from $2,000 up to the max loan amount for tuition & cost of living for your metro.</li>
+                    <li><strong>For Coding Dojo's Onsite Bootcamp,</strong> you may borrow from $2,000 up to the max loan amount for tuition for your metro & up to $4,500 for cost of living .</li>
                     <li><strong>For Coding Dojo's Online Full-Time Bootcamp,</strong> you may borrow from $2,000 to $14,995 for tuition.</li>
                     <li><strong>For Coding Dojo's Online Part-Time Bootcamp,</strong> you may borrow from $2,000 to $9,995 for tuition.</li>
                </ul>
