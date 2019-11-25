@@ -193,7 +193,7 @@ const LoanCalculator = () => {
                 break;
             case "Orange County, CA": 
                 setLoanInformation({
-                    maxLoanAmt: 15495,
+                    maxLoanAmt: 16495,
                     loanTerm36: true,
                     loanTerm60: true,
                     '0': {

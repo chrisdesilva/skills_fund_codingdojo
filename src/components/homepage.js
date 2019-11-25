@@ -75,6 +75,15 @@ class Homepage extends React.Component {
           label: 'static'
         })
       }
+
+      scrollToApply3 = () => {
+        this.apply.current.scrollIntoView({ behavior: 'smooth' });
+        // ReactGA.event({
+        //   category: `Apply Now Button ${this.props.schoolName}`,
+        //   action: 'click',
+        //   label: 'footer'
+        // })
+      }
     
       activateMoreInfo = () => {
         this.setState({
