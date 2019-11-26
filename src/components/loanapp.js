@@ -24,8 +24,8 @@ const LoanApp = React.forwardRef((props, ref) => {
     const onlinePrograms = true // set to true if there is at least one online/remote program offered
     const schoolHQState = 'WA' // two letter abbreviation for school headquarters state
 
-    const activeClass = "cursor-pointer border-2 rounded border-black text-center py-2 text-white bg-primary mb-2" // highlights selected option in loan app form
-    const inactiveClass = "cursor-pointer border-2 rounded border-black text-center py-2 mb-2"
+    const activeClass = "cursor-pointer border-2 rounded border-black text-center py-2 text-white bg-primary mb-2 w-full md:w-1/2" // highlights selected option in loan app form
+    const inactiveClass = "cursor-pointer border-2 rounded border-black text-center py-2 mb-2 w-full md:w-1/2"
 
     const handleChange = e => {
         setEmail(e.target.value)
@@ -178,7 +178,7 @@ const LoanApp = React.forwardRef((props, ref) => {
                 <label htmlFor="email">Email address</label>
                 <input className="border-2 rounded border-primary text-center py-2 mb-4 w-64" type="email" name="email" placeholder="Enter your email address" onChange={handleChange} value={email} required />
                 {multiplePrograms && 
-                    <div className="w-full lg:w-1/2 px-8 lg:px-0">
+                    <div className="w-full lg:w-1/2 px-8 lg:px-0 flex flex-col items-center">
                         <p className="text-center text-sm">Select a {props.schoolName} program</p>
                         
                         {/* WHEN ADDING AND REMOVING PROGRAMS, PAY ATTENTION TO THE NUMBER AT THE END OF programInfo.active and handleProgramSelect */}
@@ -194,6 +194,7 @@ const LoanApp = React.forwardRef((props, ref) => {
                     <input type="text" name="Student Loan Application Status" value="BLA Click Email Submitted" readOnly/>
                     <input type="text" name="Clicked Begin Loan Application BLA" value="BLA Click" readOnly/>
                 </div>
+                <span className="text-center text-sm lg:w-1/2 my-4"><strong>Please note:</strong> Coding Dojo recently set the maximum cost of living amount to $4,500. Any cost of living amount entered in the loan application that exceeds $4,500 will be reduced.</span>
                 {submitted ? <span className="pt-4 text-center">Thanks for applying! Your loan application has opened in a new window. If the application does not open and pop-up blockers have been disabled, please contact <a href="mailto:tech@skills.fund" className="text-primary">Tech@Skills.Fund</a>.</span> : <input className="opacityApply uppercase bg-primary p-3 my-4 w-48 rounded-full shadow-lg text-white cursor-pointer" value="APPLY NOW" id="loanAppSubmitBtn" type="submit"/>}
                 {!submitted && <p className="mt-3 text-xs italic">Please note: clicking Apply Now will open your loan application in a new tab</p>}
             </form>
