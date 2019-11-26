@@ -44,6 +44,10 @@ const Popup = props => {
             {
             "name": "school", 
             "value": `${props.schoolName}`
+            },
+            {
+            "name": "lead_form_submit_page", 
+            "value": `https://codingdojo.skills.fund`
             }
         ],
         "context": {
@@ -96,6 +100,7 @@ const Popup = props => {
                     <input type="text" name="Stakeholder Type" value="Student" readOnly/>
                     <input type="text" name="Lead Cycle" value="Lead Capture" readOnly/>
                     <input type="text" name="School" value={props.schoolName} readOnly/>
+                    <input type="text" name="Lead Form Submit Page" value="https://codingdojo.skills.fund" readOnly/>
                 </div>
                 {!thankYou && isPopupVisible && <input className="cursor-pointer my-2 lg:my-0 lg:ml-2 uppercase bg-primary p-3 w-40 rounded-full shadow-lg text-white" value="Send me the guide!" id="leadCaptureSubmitBtn" type="submit"/>}
                 <Collapse isOpened={thankYou}><p className="text-center m-0">Thank you! Your guide will be in your inbox soon!</p></Collapse>
