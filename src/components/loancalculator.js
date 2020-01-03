@@ -101,6 +101,21 @@ const LoanCalculator = () => {
                 showMetros(false)
                 setLoanType('0')
                 break;
+            case "Data Science": 
+                setLoanInformation({
+                    maxLoanAmt: 19495,
+                    loanTerm36: true,
+                    loanTerm60: true,
+                    '0': {
+                        k: 5,
+                        apr36: 11.16,
+                        apr60: 10.99
+                    },
+                    '1': null
+                })
+                showMetros(false)
+                setLoanType('0')
+                break;
             default: // info below needs to match info from first program
                 setLoanInformation({
                     maxLoanAmt: 17995,
@@ -270,7 +285,7 @@ const LoanCalculator = () => {
                 <h3 className="text-center">Calculate Your Monthly Payments</h3>
 
                 {/* UPDATE LOAN AMOUNTS AND COST OF LIVING BY PROGRAM BELOW */}
-                <p className="text-center">Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, and up to $9,995 for the Online Part-Time Bootcamp tuition. <br/><br/><strong>Please note: </strong>The cost of living portion of your loan may not exceed the amount requested for tuition.</p>
+                <p className="text-center">Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, up to $9,995 for the Online Part-Time Bootcamp tuition, and up to $14,995 for the Data Science program tuition and $4,500 for cost of living. <br/><br/><strong>Please note: </strong>The cost of living portion of your loan may not exceed the amount requested for tuition.</p>
                 <LoanCalcPaymentTable />
 
                 <div className="flex flex-col justify-center w-full md:w-1/3">
@@ -283,6 +298,7 @@ const LoanCalculator = () => {
                             <option value="Onsite Bootcamp">Onsite Bootcamp</option>
                             <option value="Online Full-Time">Online Full-Time</option>
                             <option value="Online Part-Time">Online Part-Time</option>
+                            <option value="Data Science">Data Science</option>
                         </select>
                     </>
                 }

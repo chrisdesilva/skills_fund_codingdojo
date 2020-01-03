@@ -13,7 +13,8 @@ const LoanApp = React.forwardRef((props, ref) => {
 		active: {
 			program1: false,
 			program2: false,
-			program3: false
+			program3: false,
+			program4: false
 		}
 	});
 	const [ loanUrl, setLoanUrl ] = useState(`https://my.skills.fund/application?lenderCode=SKCD17`); // if multiple programs, set lenderCode to first program option
@@ -40,7 +41,8 @@ const LoanApp = React.forwardRef((props, ref) => {
 					active: {
 						program1: !programInfo.active.program1,
 						program2: false,
-						program3: false
+						program3: false,
+						program4: false
 					}
 				});
 				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKCD17`); // update lenderCode with market segment code from LP
@@ -51,7 +53,8 @@ const LoanApp = React.forwardRef((props, ref) => {
 					active: {
 						program1: false,
 						program2: !programInfo.active.program2,
-						program3: false
+						program3: false,
+						program4: false
 					}
 				});
 				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDOJOO19`); // update lenderCode with market segment code from LP
@@ -62,10 +65,23 @@ const LoanApp = React.forwardRef((props, ref) => {
 					active: {
 						program1: false,
 						program2: false,
-						program3: !programInfo.active.program3
+						program3: !programInfo.active.program3,
+						program4: false
 					}
 				});
 				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDOJON18`); // update lenderCode with market segment code from LP
+				break;
+			case 4:
+				setProgramInfo({
+					programName: 'Data Science',
+					active: {
+						program1: false,
+						program2: false,
+						program3: false,
+						program4: !programInfo.active.program4
+					}
+				});
+				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKCDDS19`); // update lenderCode with market segment code from LP
 				break;
 			default:
 				// info should match case 1
@@ -74,7 +90,8 @@ const LoanApp = React.forwardRef((props, ref) => {
 					active: {
 						program1: !programInfo.active.program1,
 						program2: false,
-						program3: false
+						program3: false,
+						program4: false
 					}
 				});
 				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKCD17`);
@@ -214,6 +231,12 @@ const LoanApp = React.forwardRef((props, ref) => {
 								onClick={() => handleProgramSelect(3)}
 							>
 								Online Part-Time Bootcamp
+							</p>
+							<p
+								className={programInfo.active.program4 ? activeClass : inactiveClass}
+								onClick={() => handleProgramSelect(4)}
+							>
+								Data Science
 							</p>
 						</div>
 					)}
