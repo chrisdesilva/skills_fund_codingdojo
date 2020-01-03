@@ -2,6 +2,7 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import CookieBanner from '../components/cookieBanner';
 import Popup from '../components/popup';
 import Banner from '../components/banner';
 import LeadContent from '../components/leadcontent';
@@ -167,6 +168,7 @@ class Homepage extends React.Component {
 				<Collapse isOpened={this.state.contact} springConfig={{ stiffness: 150, damping: 40 }}>
 					<ContactForm formName={this.props.formName} />
 				</Collapse>
+				<CookieBanner />
 				<ApplyFooter onClick={this.scrollToApply3} />
 			</Layout>
 		);
