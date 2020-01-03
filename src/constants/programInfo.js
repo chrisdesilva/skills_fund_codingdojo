@@ -86,6 +86,12 @@ export const faq = { // faq section
             col: false,
             colAmount: "$6,000"
         },
+        {
+            programName: "Coding Dojo's Data Science program",
+            maxAmount: "$14,995",
+            col: true,
+            colAmount: "$4,500"
+        },
 
     ]
 }
@@ -113,7 +119,7 @@ export const threeStepCardText = {
     step1: "",
     step2: {
         header: "select your program",
-        text: "Choose between the Onsite Bootcamp, Online Full-Time Bootcamp, and Online Part-Time Bootcamp programs."
+        text: "Choose between the Onsite Bootcamp, Online Full-Time Bootcamp, Online Part-Time Bootcamp, and Data Science programs."
     },
     step3: `You'll be on your way to an exciting career in tech as part of ${schoolName}'s powerful network.`
 }
@@ -414,11 +420,86 @@ export const programLoanInfo = [ // update with program names and corresponding 
                 },
               }
           ]
-    }
+    },
+    {
+        name: "Data Science",
+        url: "https://my.skills.fund/application?lenderCode=SKCDDS19",
+        loanInfo: { // match loanInfo in first metro below
+            maxLoanAmt: 19495,
+            loanTerm36: true,
+            loanTerm60: true,
+            '0': { 
+                k: 5, 
+                apr36: 11.08, 
+                apr60: 12.51
+            },
+            '1': {
+              apr36: 11.25, 
+              apr60: 12.55
+          }
+        },
+        defaultLoanType: "0", // leave at 0 for interest-only, set to 1 for immediate repayment
+        showMetros: false,
+        showLoanTypes: false,
+        locations: ["Metro A", "Metro B", "Metro C"],
+        metros: [
+            {
+              location: "Metro A",
+              loanInfo: { // match loanInfo to Program 3 loanInfo above
+                maxLoanAmt: 19495,
+                loanTerm36: true,
+                loanTerm60: true,
+                '0': { 
+                    k: 5, 
+                    apr36: 11.08, 
+                    apr60: 12.51
+                },
+                '1': {
+                    apr36: 11.25, 
+                    apr60: 12.55
+                }
+              }
+            },
+            {
+              location: "Metro B",
+              loanInfo: {
+                  maxLoanAmt: 15545,
+                  loanTerm36: true,
+                  loanTerm60: true,
+                  '0': { 
+                    k: 5, 
+                    apr36: 11.16, 
+                    apr60: 12.51
+                  },
+                  '1': {
+                    apr36: 11.25, 
+                    apr60: 12.55
+                }
+              }
+            },
+            {
+              location: "Metro C",
+              loanInfo: {
+                  maxLoanAmt: 20545,
+                  loanTerm36: true,
+                  loanTerm60: true,
+                  '0': { 
+                    k: 5, 
+                    apr36: 11.16, 
+                    apr60: 12.51
+                  },
+                  '1': {
+                    apr36: 11.25, 
+                    apr60: 12.55
+                }
+                },
+              }
+          ]
+    },
 ]
 
 // ***** BEGIN LOAN CALC TEXT INFO *****
-export const programMaxText = "Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, and up to $9,995 for the Online Part-Time Bootcamp tuition. <br/><br/><strong>Please note: </strong>The cost of living portion of your loan may not exceed the amount requested for tuition."
+export const programMaxText = "Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, up to $9,995 for the Online Part-Time Bootcamp tuition, and up to $14,995 for the Data Science program tuition and $4,500 for cost of living. <br/><br/><strong>Please note: </strong>The cost of living portion of your loan may not exceed the amount requested for tuition."
 
 export const paymentTable = {
     headers: ["Location", "Tuition", "Cost of Living", "Max Total"],
