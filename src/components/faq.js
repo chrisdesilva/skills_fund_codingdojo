@@ -7,6 +7,7 @@ const costOfLiving = true // true if at least one program has cost of living inc
 const interestOnly = true // true if interest-only payments are an option
 const immediateRepayment = false // true if immediate repayment is an option
 const multipleLoanLengths = true // true if 36 and 60 month options are both available
+const multipleLoanTypes = false // true if 36 and 60 month options are both available
 
 // interest payment FAQ info
 const interestRate36 = '8.99%'
