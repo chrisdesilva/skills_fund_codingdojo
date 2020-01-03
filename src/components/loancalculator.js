@@ -109,7 +109,7 @@ const LoanCalculator = () => {
                     '0': {
                         k: 5,
                         apr36: 11.16,
-                        apr60: 10.99
+                        apr60: 12.51
                     },
                     '1': null
                 })
