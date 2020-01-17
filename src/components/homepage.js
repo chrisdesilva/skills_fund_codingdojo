@@ -2,8 +2,8 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+// import Popup from '../components/popup';
 import CookieBanner from '../components/cookieBanner';
-import Popup from '../components/popup';
 import Banner from '../components/banner';
 import LeadContent from '../components/leadcontent';
 import ThreeSteps from '../components/threesteps';
@@ -11,6 +11,7 @@ import LoanCalculator from '../components/loancalculator';
 import InfoButtonContainer from '../components/infobuttoncontainer';
 import LoanApp from './loanapp';
 import Reviews from './reviews';
+import DisabledApplication from './disabledApplication';
 import LeadCaptureForm from './leadcaptureform';
 import ApplyFooter from './applyFooter';
 import { UnmountClosed as Collapse } from 'react-collapse';
@@ -18,6 +19,7 @@ import TermInfo from './terminfo';
 import FAQ from './faq';
 import Eligibility from './eligibility';
 import ContactForm from './contactform';
+import { applicationsLive } from '../constants/programInfo';
 
 class Homepage extends React.Component {
 	constructor(props) {
@@ -134,22 +136,29 @@ class Homepage extends React.Component {
               />
             } */}
 				<Banner howItWorksOnClick={this.scrollToContent} applyNowOnClick={this.scrollToApply} />
-				<LeadContent />
-				<ThreeSteps onClick={this.scrollToApply2} ref={this.threesteps} />
+				{/* <LeadContent />
+            <ThreeSteps
+              onClick={this.scrollToApply2} 
+              ref={this.threesteps}
+            /> */}
 				<LoanCalculator />
-				<LoanApp
-					ref={this.apply}
-					IP={this.props.IP}
-					pageUri={this.props.pageUri}
-					schoolName={this.props.schoolName}
-				/>
+				{applicationsLive ? (
+					<LoanApp
+						ref={this.apply}
+						IP={this.props.IP}
+						pageUri={this.props.pageUri}
+						schoolName={this.props.schoolName}
+					/>
+				) : (
+					<DisabledApplication
+						ref={this.apply}
+						IP={this.props.IP}
+						pageUri={this.props.pageUri}
+						schoolName={this.props.schoolName}
+					/>
+				)}
 				<Reviews />
-				<LeadCaptureForm
-					IP={this.props.IP}
-					pageUri={this.props.pageUri}
-					schoolName={this.props.schoolName}
-					trackGA={this.trackStatic}
-				/>
+				<LeadCaptureForm IP={this.props.IP} pageUri={this.props.pageUri} schoolName={this.props.schoolName} />
 				<InfoButtonContainer
 					terms={this.activateMoreInfo}
 					faq={this.activateFAQ}
@@ -160,7 +169,7 @@ class Homepage extends React.Component {
 					<TermInfo />
 				</Collapse>
 				<Collapse isOpened={this.state.faq} springConfig={{ stiffness: 150, damping: 40 }}>
-					<FAQ />
+					<FAQ schoolName={this.props.schoolName} />
 				</Collapse>
 				<Collapse isOpened={this.state.eligibility} springConfig={{ stiffness: 150, damping: 40 }}>
 					<Eligibility />
@@ -169,7 +178,7 @@ class Homepage extends React.Component {
 					<ContactForm formName={this.props.formName} />
 				</Collapse>
 				<CookieBanner />
-				<ApplyFooter onClick={this.scrollToApply3} />
+				<ApplyFooter onClick={this.scrollToApply} />
 			</Layout>
 		);
 	}

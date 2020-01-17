@@ -1,103 +1,129 @@
-import React, { useState } from 'react';
-import ReactGA from 'react-ga';
+import React, { useEffect, useState } from 'react';
+// import ReactGA from 'react-ga'
 import ReactPixel from 'react-facebook-pixel';
 import marching from '../images/PeopleMarchColor.png';
 import { UnmountClosed as Collapse } from 'react-collapse';
+import {
+	faq,
+	hubspotFormId,
+	moreThanSixPrograms,
+	programLoanInfo,
+	schoolName,
+	selectAProgram,
+	skfURL
+} from '../constants/programInfo';
 
 const LoanApp = React.forwardRef((props, ref) => {
 	const [ email, setEmail ] = useState('');
 	const [ submitted, isSubmitted ] = useState(false);
 	const [ disclaimers, toggleDisclaimers ] = useState(false);
-	const [ programInfo, setProgramInfo ] = useState({
-		programName: 'Onsite Bootcamp',
-		active: {
-			program1: false,
-			program2: false,
-			program3: false,
-			program4: false
-		}
-	});
-	const [ loanUrl, setLoanUrl ] = useState(`https://my.skills.fund/application?lenderCode=SKCD17`); // if multiple programs, set lenderCode to first program option
-	const formID = 'c722ff33-00c5-4a56-8849-c4982db81f44'; // get form id for apply now
-	const costOfLiving = true; // set to false of cost of living is not available
-	const multiplePrograms = true; // set to false if there is only one program
-	const onlinePrograms = true; // set to true if there is at least one online/remote program offered
-	const schoolHQState = 'WA'; // two letter abbreviation for school headquarters state
-
+	const [ loanUrl, setLoanUrl ] = useState(programLoanInfo[0].url);
+	const [ programName, setProgramName ] = useState(programLoanInfo[0].name);
+	const [ activeIndex, setActiveIndex ] = useState(0); // takes in index of program to execute setActive hook
+	const [ active, setActive ] = useState(null); // sets individual programs as active or inactive to change highlight color
 	const activeClass =
-		'cursor-pointer border-2 rounded border-black text-center py-2 text-white bg-primary mb-2 w-full md:w-1/2'; // highlights selected option in loan app form
-	const inactiveClass = 'cursor-pointer border-2 rounded border-black text-center py-2 mb-2 w-full md:w-1/2';
+		'menu-item cursor-pointer border-2 rounded border-secondary text-center text-secondary py-2 mb-2';
+	const inactiveClass = 'menu-item cursor-pointer border-2 rounded border-black text-center py-2 mb-2';
+	const formName = `${props.schoolName}_apply_now program-apply flex flex-col items-center`;
+	const costOfLiving = faq.costOfLiving;
+	const multiplePrograms = faq.multiPrograms;
+	const onlinePrograms = faq.onlinePrograms;
+	const schoolHQState = faq.schoolHQState;
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
 	};
 
-	// update segment code and programName (must match internal value on Hubspot form)
-	const handleProgramSelect = (programNumber) => {
-		switch (programNumber) {
-			case 1: // info should match default
-				setProgramInfo({
-					programName: 'Onsite Bootcamp',
-					active: {
-						program1: !programInfo.active.program1,
-						program2: false,
-						program3: false,
-						program4: false
-					}
+	const toggleIsActive = (i) => {
+		setLoanUrl(programLoanInfo[i]['url']);
+		setProgramName(programLoanInfo[i]['name']);
+		setActiveIndex(i);
+		switch (activeIndex) { // accounts for up to 10 programs
+			case 0:
+				setActive({
+					0: !active,
+					1: false,
+					2: false,
+					3: false,
+					4: false,
+					5: false
 				});
-				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKCD17`); // update lenderCode with market segment code from LP
+				break;
+			case 1:
+				setActive({
+					0: false,
+					1: !active,
+					2: false,
+					3: false,
+					4: false,
+					5: false
+				});
 				break;
 			case 2:
-				setProgramInfo({
-					programName: 'Online Full-Time Bootcamp',
-					active: {
-						program1: false,
-						program2: !programInfo.active.program2,
-						program3: false,
-						program4: false
-					}
+				setActive({
+					0: false,
+					1: false,
+					2: !active,
+					3: false,
+					4: false,
+					5: false
 				});
-				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDOJOO19`); // update lenderCode with market segment code from LP
 				break;
 			case 3:
-				setProgramInfo({
-					programName: 'Online Part-Time Bootcamp',
-					active: {
-						program1: false,
-						program2: false,
-						program3: !programInfo.active.program3,
-						program4: false
-					}
+				setActive({
+					0: false,
+					1: false,
+					2: false,
+					3: !active,
+					4: false,
+					5: false
 				});
-				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKDOJON18`); // update lenderCode with market segment code from LP
 				break;
 			case 4:
-				setProgramInfo({
-					programName: 'Data Science',
-					active: {
-						program1: false,
-						program2: false,
-						program3: false,
-						program4: !programInfo.active.program4
-					}
+				setActive({
+					0: false,
+					1: false,
+					2: false,
+					3: false,
+					4: !active,
+					5: false
 				});
-				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKCDDS19`); // update lenderCode with market segment code from LP
+				break;
+			case 5:
+				setActive({
+					0: false,
+					1: false,
+					2: false,
+					3: false,
+					4: false,
+					5: !active
+				});
 				break;
 			default:
-				// info should match case 1
-				setProgramInfo({
-					programName: 'Onsite Bootcamp',
-					active: {
-						program1: !programInfo.active.program1,
-						program2: false,
-						program3: false,
-						program4: false
-					}
+				setActive({
+					0: !active,
+					1: false,
+					2: false,
+					3: false,
+					4: false,
+					5: false
 				});
-				setLoanUrl(`https://my.skills.fund/application?lenderCode=SKCD17`);
 				break;
 		}
 	};
+
+	const toggleIsActiveDropdown = (e) => {
+		let program = e.target.value;
+		setActiveIndex(program);
+	};
+
+	useEffect(
+		() => {
+			setLoanUrl(programLoanInfo[activeIndex]['url']);
+			setProgramName(programLoanInfo[activeIndex]['name']);
+		},
+		[ activeIndex ]
+	);
 
 	const redirectLoanApp = () => {
 		window.open(loanUrl, '_blank', 'noopener noreferrer');
@@ -105,7 +131,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 
 	// const trackGoogleAnalyticsEvent = () => {
 	//         ReactGA.event({
-	//             category: `Apply Now Button | Coding Dojo`,
+	//             category: `Apply Now Button | ${schoolName}`,
 	//             action: 'click',
 	//             label: 'submitted loan application'
 	//         })
@@ -121,7 +147,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 	// submit form data to Hubspot, track Google Analytics event, and redirect user to loan application
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const url = `https://api.hsforms.com/submissions/v3/integration/submit/3871135/${formID}`;
+		const url = `https://api.hsforms.com/submissions/v3/integration/submit/3871135/${hubspotFormId}`;
 
 		// hsCookie gets the data necessary to track Hubspot analytics
 		const hsCookie = document.cookie.split(';').reduce((cookies, cookie) => {
@@ -142,8 +168,8 @@ const LoanApp = React.forwardRef((props, ref) => {
 					value: 'Student'
 				},
 				{
-					name: 'select_a_codingdojo_program', // update school name to match form field on Hubspot
-					value: `${programInfo.programName}`
+					name: `${selectAProgram}`,
+					value: `${programName}`
 				},
 				{
 					name: 'school',
@@ -160,7 +186,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 			],
 			context: {
 				hutk: hsCookie.hubspotutk, // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
-				pageUri: `${props.pageUri}`,
+				pageUri: `${skfURL}`,
 				pageName: `${props.schoolName} | Skills Fund`,
 				ipAddress: `${props.IP}`
 			}
@@ -184,11 +210,8 @@ const LoanApp = React.forwardRef((props, ref) => {
 	};
 
 	return (
-		<div
-			ref={ref}
-			className="flex flex-col items-center justify-center pt-8 mx-2 lg:mx-10 rounded shadow-xl bg-purple-150"
-		>
-			<h2>Loan Application</h2>
+		<div ref={ref} className="flex flex-col items-center justify-center pt-8 bg-primary">
+			<h2 className="text-white">Loan Application</h2>
 			<div className="rounded shadow-2xl pt-8 px-8 mx-4 bg-white">
 				{/* update with school name, remove cost of living if school does not offer it */}
 				<h3 className="text-center font-normal">
@@ -198,51 +221,58 @@ const LoanApp = React.forwardRef((props, ref) => {
 					<img className="w-auto" src={marching} alt="People marching and carrying flags" loading="lazy" />
 				</div>
 				{/* update form fields as necessary */}
-				<form className="codingdojo_apply_now program-apply flex flex-col items-center" onSubmit={handleSubmit}>
+				<form className={formName} onSubmit={handleSubmit}>
 					<label htmlFor="email">Email address</label>
 					<input
-						className="border-2 rounded border-primary text-center py-2 mb-4 w-64"
+						className="border-2 rounded border-black text-center py-2 mb-4 w-64"
 						type="email"
 						name="email"
+						id="email"
+						label="email"
 						placeholder="Enter your email address"
 						onChange={handleChange}
 						value={email}
 						required
 					/>
-					{multiplePrograms && (
-						<div className="w-full lg:w-1/2 px-8 lg:px-0 flex flex-col items-center">
-							<p className="text-center text-sm">Select a {props.schoolName} program</p>
-
-							{/* WHEN ADDING AND REMOVING PROGRAMS, PAY ATTENTION TO THE NUMBER AT THE END OF programInfo.active and handleProgramSelect */}
-							<p
-								className={programInfo.active.program1 ? activeClass : inactiveClass}
-								onClick={() => handleProgramSelect(1)}
+					{multiplePrograms &&
+					!moreThanSixPrograms && (
+						<div className="w-full lg:w-64 px-8 lg:px-0">
+							<p className="text-center text-sm">Select your {props.schoolName} program</p>
+							{programLoanInfo.map((program, i) => {
+								return (
+									<p
+										key={program.name}
+										className={activeIndex === i ? activeClass : inactiveClass}
+										onClick={() => toggleIsActive(i)}
+									>
+										{program.name}
+									</p>
+								);
+							})}
+						</div>
+					)}
+					{multiplePrograms &&
+					moreThanSixPrograms && (
+						<div className="w-full lg:w-64 px-8 lg:px-0">
+							<p className="text-center text-sm">Select your {props.schoolName} program</p>
+							<select
+								id="programSelect"
+								className="border-2 border-primary mb-5 bg-white text-primary text-center w-full"
+								onChange={toggleIsActiveDropdown}
 							>
-								Onsite Bootcamp
-							</p>
-							<p
-								className={programInfo.active.program2 ? activeClass : inactiveClass}
-								onClick={() => handleProgramSelect(2)}
-							>
-								Online Full-Time Bootcamp
-							</p>
-							<p
-								className={programInfo.active.program3 ? activeClass : inactiveClass}
-								onClick={() => handleProgramSelect(3)}
-							>
-								Online Part-Time Bootcamp
-							</p>
-							<p
-								className={programInfo.active.program4 ? activeClass : inactiveClass}
-								onClick={() => handleProgramSelect(4)}
-							>
-								Data Science
-							</p>
+								{programLoanInfo.map((program, i) => {
+									return (
+										<option label={program.name} key={program.name} value={i}>
+											{program.name}
+										</option>
+									);
+								})}
+							</select>
 						</div>
 					)}
 					<div className="hidden">
 						<input type="text" name="Stakeholder Type" value="Student" readOnly />
-						<input type="text" name="Program Name" value={programInfo.programName} readOnly />
+						<input type="text" name="Program Name" value={programLoanInfo.programName} readOnly />
 						<input type="text" name="School" value={props.schoolName} readOnly />
 						<input
 							type="text"
@@ -252,11 +282,6 @@ const LoanApp = React.forwardRef((props, ref) => {
 						/>
 						<input type="text" name="Clicked Begin Loan Application BLA" value="BLA Click" readOnly />
 					</div>
-					<span className="text-center text-sm lg:w-1/2 my-4">
-						<strong>Please note:</strong> Coding Dojo recently set the maximum cost of living amount to
-						$4,500. Any cost of living amount entered in the loan application that exceeds $4,500 will be
-						reduced.
-					</span>
 					{submitted ? (
 						<span className="pt-4 text-center">
 							Thanks for applying! Your loan application has opened in a new window. If the application
@@ -267,7 +292,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 						</span>
 					) : (
 						<input
-							className="opacityApply uppercase bg-primary p-3 my-4 w-48 rounded-full shadow-lg text-white cursor-pointer"
+							className="opacityApply uppercase bg-secondary p-3 my-4 w-48 rounded-full text-white cursor-pointer"
 							value="APPLY NOW"
 							id="loanAppSubmitBtn"
 							type="submit"
@@ -281,25 +306,25 @@ const LoanApp = React.forwardRef((props, ref) => {
 				</form>
 			</div>
 			{/* {onlinePrograms && 
-                    <p className="m-0 text-base pt-8">
+                    <p className="m-0 text-base pt-8 px-4 text-white">
                         <strong className="m-0">ATTENTION ONLINE STUDENTS: </strong>When entering "Applicant Information" within your loan application, <strong className="m-0">please select {schoolHQState} as "the state of the school you plan to attend."</strong>
                     </p>
                 } */}
 			<div className="px-8 text-sm">
-				{/* <p className="text-center pt-8">If you are a cosigner, begin the addendum now by clicking <a className="text-primary" href="https://sf.privateloan.studentloan.org/Cosigner.do?execution=e1s1" rel="noreferrer noopener" target="_blank">here</a>.</p> */}
+				{/* <p className="text-center pt-8 text-white">If you are a cosigner, click to begin the <a className="underline" href="https://sf.privateloan.studentloan.org/Cosigner.do?execution=e1s1" rel="noreferrer noopener" target="_blank">addendum</a>.</p> */}
 				<p
-					className="text-center text-primary cursor-pointer font-bold my-4"
+					className="text-center text-white cursor-pointer font-bold my-4"
 					onClick={() => toggleDisclaimers(!disclaimers)}
 				>
 					Disclaimers
 				</p>
 				<Collapse isOpened={disclaimers} springConfig={{ stiffness: 150, damping: 40 }}>
 					<div>
-						<p>
+						<p className="text-white">
 							<strong>Before you begin, please read these important notes:</strong>
 						</p>
-						<p>Customer identification policy:</p>
-						<p>
+						<p className="text-white">Customer identification policy:</p>
+						<p className="text-white">
 							For the purpose of the following notice, the words "you" and "your" mean the Borrower and
 							the Cosigner. All applicants: Important Federal Law Notice - Important information about
 							procedures for opening a new account: To help the government fight the funding of terrorism
@@ -309,26 +334,26 @@ const LoanApp = React.forwardRef((props, ref) => {
 							and other information that will allow us to identify you. We may also ask to see your
 							driver's license or other identifying documents.
 						</p>
-						<p>Consent to share data:</p>
-						<p>
+						<p className="text-white">Consent to share data:</p>
+						<p className="text-white">
 							By clicking the box below and beginning the application, I consent under Federal and state
 							privacy laws to NIMAA providing to Skills Fund information related to my application,
 							enrollment, and completion, including but not limited to information contained in my
 							original application and supplements as well as information regarding my completion,
 							graduation, and post-program outcomes information.
 						</p>
-						<p>
+						<p className="text-white">
 							<strong>While in the application, please note:</strong>
 						</p>
-						<p>
+						<p className="text-white">
 							1. DO NOT use the browser Back button. Using the browser Back button may cause invalid
 							information and delay the processing of your loan.
 						</p>
-						<p>
+						<p className="text-white">
 							2. Your application will not be complete until it has been signed and submitted along with
 							any required documentation.
 						</p>
-						<p className="mb-0 pb-4">
+						<p className="mb-0 pb-4 text-white">
 							3. You will need the address and phone number of 3 references to complete your application,
 							including one relative not living with you. Others may be friends, employers, etc.
 						</p>

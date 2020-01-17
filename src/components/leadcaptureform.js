@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ebook from '../images/ebook.jpg'
+import ebook from '../images/WomanClimber_Color.png'
 
 const LeadCaptureForm = props => {
 
