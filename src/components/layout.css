@@ -83,12 +83,14 @@ p:not(.popup p) {
 .loanCalculator__selectInput select {
 	appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	background: transparent;
 	width: 100%;
 }
 
 .loanCalculator__input {
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	height: 10px;
 	background: #e7e7e7;
@@ -98,6 +100,22 @@ p:not(.popup p) {
 
 .loanCalculator__input::-webkit-slider-thumb {
 	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #9d1996;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: all 300ms;
+	transform: scale(1.0);
+	box-sizing: border-box;
+	border: 2px solid transparent;
+}
+
+.loanCalculator__input::-moz-slider-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	background: #9d1996;
 	width: 20px;
@@ -115,7 +133,16 @@ p:not(.popup p) {
 	border: 2px solid #14a5a9;
 }
 
+.loanCalculator__input::-moz-slider-thumb:active {
+	transform: scale(1.2);
+	border: 2px solid #14a5a9;
+}
+
 .loanCalculator__input::-webkit-slider-thumb:hover {
+	border: 2px solid #14a5a9;
+}
+
+.loanCalculator__input::-moz-slider-thumb:hover {
 	border: 2px solid #14a5a9;
 }
 
