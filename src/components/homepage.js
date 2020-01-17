@@ -2,7 +2,7 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Popup from '../components/popup';
+// import Popup from '../components/popup';
 import CookieBanner from '../components/cookieBanner';
 import Banner from '../components/banner';
 import LeadContent from '../components/leadcontent';
