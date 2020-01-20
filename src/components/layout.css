@@ -113,7 +113,7 @@ p:not(.popup p) {
 	border: 2px solid transparent;
 }
 
-.loanCalculator__input::-moz-slider-thumb {
+.loanCalculator__input::-moz-range-thumb {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -133,7 +133,7 @@ p:not(.popup p) {
 	border: 2px solid #14a5a9;
 }
 
-.loanCalculator__input::-moz-slider-thumb:active {
+.loanCalculator__input::-moz-range-thumb:active {
 	transform: scale(1.2);
 	border: 2px solid #14a5a9;
 }
@@ -142,7 +142,7 @@ p:not(.popup p) {
 	border: 2px solid #14a5a9;
 }
 
-.loanCalculator__input::-moz-slider-thumb:hover {
+.loanCalculator__input::-moz-range-thumb:hover {
 	border: 2px solid #14a5a9;
 }
 

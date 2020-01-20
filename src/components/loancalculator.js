@@ -179,7 +179,7 @@ const LoanCalculator = props => {
                 </div>
 
                 <div className="loanCalculator__slider flex flex-col items-center px-4">
-                    <input aria-label="loan-calculator-slider" className="loanCalculator__input w-full lg:w-1/2 mb-2" onChange={handleSliderAmt} onTouchEnd={calculateMonthlyPayment} onMouseUp={calculateMonthlyPayment} type="range" min="2000" step="5" max={programMax} value={loanValue}/>
+                    <input aria-label="loan-calculator-slider" className="loanCalculator__input w-full lg:w-1/2 mb-2" onChange={handleSliderAmt} onBlur={handleSliderAmt} onTouchEnd={calculateMonthlyPayment} onMouseUp={calculateMonthlyPayment} onKeyUp={calculateMonthlyPayment} type="range" min="2000" step="5" max={programMax} value={loanValue}/>
                     <div className="loanCalculator__labels flex justify-between w-full lg:w-1/2">
                         <p>Min<br/>$2,000</p>
                         <p className="text-center">Loan Amount<br/><span className="loanCalculator__amount">{formatter.format(loanValue)}</span></p>
@@ -195,7 +195,7 @@ const LoanCalculator = props => {
                     <span className={loanType === "0" ? "show" : "hide"}><><p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${interestPayment.payment36}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments in School</p></></span>
                     <div className={loanType === "0" ? "show" : "show move"}>
                         <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${monthlyPayment.payment36}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments{loanType === "0" ? " After Graduation" : null}</p>
-                        <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment36)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost</p>
+                        <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment36)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost of Loan</p>
                     </div>
                 </div>
                 
@@ -207,7 +207,7 @@ const LoanCalculator = props => {
                         <span className={loanType === "0" ? "show" : "hide"}><><p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${interestPayment.payment60}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments in School</p></></span>
                         <div className={loanType === "0" ? "show" : "show move"}>
                             <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${monthlyPayment.payment60}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments{loanType === "0" ? " After Graduation" : null}</p>
-                            <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment60)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost</p>
+                            <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment60)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost of Loan</p>
                         </div>
                     </div>
                     :
