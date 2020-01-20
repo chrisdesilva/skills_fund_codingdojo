@@ -27,8 +27,6 @@ const LoanApp = React.forwardRef((props, ref) => {
 	const formName = `${props.schoolName}_apply_now program-apply flex flex-col items-center`;
 	const costOfLiving = faq.costOfLiving;
 	const multiplePrograms = faq.multiPrograms;
-	const onlinePrograms = faq.onlinePrograms;
-	const schoolHQState = faq.schoolHQState;
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
@@ -129,14 +127,6 @@ const LoanApp = React.forwardRef((props, ref) => {
 		window.open(loanUrl, '_blank', 'noopener noreferrer');
 	};
 
-	// const trackGoogleAnalyticsEvent = () => {
-	//         ReactGA.event({
-	//             category: `Apply Now Button | ${schoolName}`,
-	//             action: 'click',
-	//             label: 'submitted loan application'
-	//         })
-	// }
-
 	const trackFacebookPixel = () => {
 		ReactPixel.track('InitiateCheckout', {
 			value: 7200.0,
@@ -173,7 +163,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 				},
 				{
 					name: 'school',
-					value: `${props.schoolName}`
+					value: `${schoolName}`
 				},
 				{
 					name: 'student_loan_application_status',
@@ -203,16 +193,65 @@ const LoanApp = React.forwardRef((props, ref) => {
 			.then((response) => console.log('success', response))
 			.catch((error) => console.log('error: ', error));
 
-		// trackGoogleAnalyticsEvent()
 		trackFacebookPixel();
 		redirectLoanApp();
+		isSubmitted(true);
+	};
+
+	const handleNotify = (e) => {
+		e.preventDefault();
+		const url = `https://api.hsforms.com/submissions/v3/integration/submit/3871135/69140c47-bb03-4a1b-b674-cc136fdea23d`;
+
+		// hsCookie gets the data necessary to track Hubspot analytics
+		const hsCookie = document.cookie.split(';').reduce((cookies, cookie) => {
+			const [ name, value ] = cookie.split('=').map((c) => c.trim());
+			cookies[name] = value;
+			return cookies;
+		}, {});
+
+		//   field names are all set to match internal values on Hubspot
+		const data = {
+			fields: [
+				{
+					name: 'email',
+					value: `${email}`
+				},
+				{
+					name: 'stakeholder_type',
+					value: 'Student'
+				},
+				{
+					name: 'school',
+					value: `${props.schoolName}`
+				}
+			],
+			context: {
+				hutk: hsCookie.hubspotutk, // include this parameter and set it to the hubspotutk cookie value to enable cookie tracking on your submission
+				pageUri: `${props.pageUri}`,
+				pageName: `${props.schoolName} | Skills Fund`,
+				ipAddress: `${props.IP}`
+			}
+		};
+
+		fetch(url, {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then((res) => res.json())
+			.then((response) => console.log('success', response))
+			.catch((error) => console.log('error: ', error));
+
+		trackFacebookPixel();
 		isSubmitted(true);
 	};
 
 	return (
 		<div ref={ref} className="flex flex-col items-center justify-center pt-8 bg-primary">
 			<h2 className="text-white">Loan Application</h2>
-			<div className="rounded shadow-2xl pt-8 px-8 mx-4 bg-white">
+			<div className="rounded shadow-2xl pt-8 px-8 mx-4 bg-white w-full md:w-1/2">
 				{/* update with school name, remove cost of living if school does not offer it */}
 				<h3 className="text-center font-normal">
 					{props.schoolName} Tuition{costOfLiving && <span> and Cost of Living</span>} Financing
@@ -221,7 +260,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 					<img className="w-auto" src={marching} alt="People marching and carrying flags" loading="lazy" />
 				</div>
 				{/* update form fields as necessary */}
-				<form className={formName} onSubmit={handleSubmit}>
+				<form className={formName} onSubmit={programName === 'Data Science' ? handleNotify : handleSubmit}>
 					<label htmlFor="email">Email address</label>
 					<input
 						className="border-2 rounded border-black text-center py-2 mb-4 w-64"
@@ -282,14 +321,13 @@ const LoanApp = React.forwardRef((props, ref) => {
 						/>
 						<input type="text" name="Clicked Begin Loan Application BLA" value="BLA Click" readOnly />
 					</div>
-					{submitted ? (
-						<span className="pt-4 text-center">
-							Thanks for applying! Your loan application has opened in a new window. If the application
-							does not open and pop-up blockers have been disabled, please contact{' '}
-							<a href="mailto:tech@skills.fund" className="text-primary">
-								Tech@Skills.Fund
-							</a>.
-						</span>
+					{programName === 'Data Science' ? (
+						<input
+							className="opacityApply uppercase bg-primary p-3 my-4 w-48 rounded-full text-white cursor-pointer"
+							value="NOTIFY ME"
+							id="loanAppSubmitBtn"
+							type="submit"
+						/>
 					) : (
 						<input
 							className="opacityApply uppercase bg-secondary p-3 my-4 w-48 rounded-full text-white cursor-pointer"
@@ -297,6 +335,20 @@ const LoanApp = React.forwardRef((props, ref) => {
 							id="loanAppSubmitBtn"
 							type="submit"
 						/>
+					)}
+					{programName === 'Data Science' &&
+					!submitted && (
+						<p>
+							Applications for the Data Science program will become available 90 days before the cohort
+							start date.
+						</p>
+					)}
+					{programName === 'Data Science' &&
+					submitted && (
+						<p>
+							Thanks for requesting more information! We'll let you know when the application button for
+							the Data Science program becomes available.
+						</p>
 					)}
 					{!submitted && (
 						<p className="mt-3 text-xs italic">
