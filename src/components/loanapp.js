@@ -338,14 +338,14 @@ const LoanApp = React.forwardRef((props, ref) => {
 					)}
 					{programName === 'Data Science' &&
 					!submitted && (
-						<p>
+						<p className="text-center">
 							Applications for the Data Science program will become available 90 days before the cohort
 							start date.
 						</p>
 					)}
 					{programName === 'Data Science' &&
 					submitted && (
-						<p>
+						<p className="text-center">
 							Thanks for requesting more information! We'll let you know when the application button for
 							the Data Science program becomes available.
 						</p>
