@@ -142,7 +142,8 @@ const LoanCalculator = props => {
                         </div>
                         <div className="w-full md:w-1/2 lg:w-1/3"><Image /></div>
                     </div>
-                    
+                    <p className="text-center">Choose the loan amount that works best for you. Borrow up to your metro's max (see table below) for the Onsite Bootcamp, up to $14,995 for the Online Full-Time Bootcamp tuition, and up to $9,995 for the Online Part-Time Bootcamp tuition. <br/><br/><strong>Please note: </strong>The cost of living portion of your loan may not exceed the amount requested for tuition.</p>
+                    <LoanCalcPaymentTable />
                     <div>
                         {faq.multiPrograms ?
                             <>
