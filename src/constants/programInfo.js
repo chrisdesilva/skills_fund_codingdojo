@@ -150,7 +150,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
         name: "Onsite Bootcamp",
         url: "https://my.skills.fund/application?lenderCode=SKCD17",
         loanInfo: { // match loanInfo in first metro below
-            maxLoanAmt: 17995,
+            maxLoanAmt: 19495,
             loanTerm36: true,
             loanTerm60: true,
             '0': { 
@@ -170,7 +170,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Arlington, VA",
             loanInfo: { // // match loanInfo to Program 1 above
-              maxLoanAmt: 17995,
+              maxLoanAmt: 19495,
               loanTerm36: true,
               loanTerm60: true,
               '0': { 
@@ -186,7 +186,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Berkeley (East Bay), CA",
             loanInfo: {
-                maxLoanAmt: 18495,
+                maxLoanAmt: 19495,
                 loanTerm36: true,
                 loanTerm60: true,
                 '0': { 
@@ -200,7 +200,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Chicago, IL",
             loanInfo: {
-                maxLoanAmt: 17495,
+                maxLoanAmt: 18495,
                 loanTerm36: true,
                 loanTerm60: true,
                 '0': { 
@@ -214,7 +214,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Dallas, TX",
             loanInfo: {
-                maxLoanAmt: 15995,
+                maxLoanAmt: 17495,
                 loanTerm36: true,
                 loanTerm60: true,
                 '0': { 
@@ -228,7 +228,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Los Angeles, CA",
             loanInfo: {
-                maxLoanAmt: 16495,
+                maxLoanAmt: 19495,
                 loanTerm36: true,
                 loanTerm60: true,
                 '0': { 
@@ -242,7 +242,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Orange County, CA",
             loanInfo: {
-                maxLoanAmt: 16495,
+                maxLoanAmt: 19495,
                 loanTerm36: true,
                 loanTerm60: true,
                 '0': { 
@@ -256,7 +256,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Seattle, WA",
             loanInfo: {
-                maxLoanAmt: 18495,
+                maxLoanAmt: 19495,
                 loanTerm36: true,
                 loanTerm60: true,
                 '0': { 
@@ -270,7 +270,7 @@ export const programLoanInfo = [ // update with program names and corresponding 
           {
             location: "Silicon Valley, CA",
             loanInfo: {
-                maxLoanAmt: 19495,
+                maxLoanAmt: 20495,
                 loanTerm36: true,
                 loanTerm60: true,
                 '0': { 
@@ -506,33 +506,33 @@ export const paymentTable = {
     data: [
         {
             name: "Arlington, VA",
-            tuition: "$13,495",
-            col: "$4,500",
-            max: "$17,995"
-        },
-        {
-            name: "Silicon Valley, CA",
             tuition: "$14,995",
             col: "$4,500",
             max: "$19,495"
         },
         {
-            name: "Los Angeles, CA & Orange County, CA",
-            tuition: "$11,995",
+            name: "Silicon Valley, CA",
+            tuition: "$15,995",
             col: "$4,500",
-            max: "$16,495"
+            max: "$20,495"
+        },
+        {
+            name: "Los Angeles, CA & Orange County, CA",
+            tuition: "$14,995",
+            col: "$4,500",
+            max: "$19,495"
         },
         {
             name: "Seattle, WA & Berkeley (East Bay), CA",
-            tuition: "$13,995",
+            tuition: "$14,995",
             col: "$4,500",
-            max: "$18,495"
+            max: "$19,495"
         },
         {
             name: "Dallas, TX",
-            tuition: "$11,495",
+            tuition: "$12,995",
             col: "$4,500",
-            max: "$15,995"
+            max: "$17,495"
         },
         {
             name: "Tulsa, OK",
@@ -542,9 +542,9 @@ export const paymentTable = {
         },
         {
             name: "Chicago, IL",
-            tuition: "$12,995",
+            tuition: "$13,995",
             col: "$4,500",
-            max: "$17,495"
+            max: "$18,495"
         },
     ],
     show: true
