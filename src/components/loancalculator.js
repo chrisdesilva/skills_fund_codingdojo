@@ -391,6 +391,27 @@ const LoanCalculator = props => {
             ? "Make interest-only payments while in the program. Two months after completion, begin full payments."
             : "Start making full payments (interest + principal) about one month after disbursement."}
         </p>
+        <p className="font-bold text-xs text-center hidden lg:inline mb-2">
+          Enroll in Autopay to reduce your interest rate. Learn more{" "}
+          <a
+            href="https://skills.fund/frequently-asked-questions/#autopay"
+            className="text-primary font-bold"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            here
+          </a>
+          .{" "}
+          <a
+            href="https://skills.fund/autopay-terms-and-conditions"
+            className="text-primary font-bold"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Terms and conditions
+          </a>{" "}
+          apply.
+        </p>
         <p className="text-center text-xs italic mb-0 pb-4 px-8">
           *The Annual Percentage Rate (APR) shown is estimated based on the loan
           type, origination fee, and approximate program length. The actual APR
