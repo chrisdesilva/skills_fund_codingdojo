@@ -282,7 +282,15 @@ const LoanPreview = props => {
             </select>
           </div>
 
-          <p>{` `}</p>
+          <div className="p-4 border-2 border-gray-700 rounded shadow my-8">
+            <h3>Example loan for borrowers with excellent credit</h3>
+            <p>Interest Only</p>
+            <p>Total Loan Amount: $10,000</p>
+            <p>For 36 Months</p>
+            <p>Monthly Payment: $80.18</p>
+            <p>8.99% Interest Rate, 11.07% APR</p>
+            <p>Total Cost of Loan: $12,856.16</p>
+          </div>
         </div>
       </div>
     </div>
