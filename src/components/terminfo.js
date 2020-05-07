@@ -6,7 +6,7 @@ import { faq, schoolInfo } from "../constants/programInfo"
 
 const TermInfo = props => (
   <div className="text-center mx-2 lg:mx-10 p-8 shadow rounded">
-    <h2 className="py-4 text-center">More Info On Terms</h2>
+    <h2 className="py-4 text-center">Loan Details</h2>
     <div>
       <GeneralTerms
         multipleLoanLengths={faq.multipleLoanLengths}

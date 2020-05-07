@@ -53,9 +53,9 @@ export const faq = {
   costOfLivingPrograms: "", // leave as empty string is cost of living availability is the same across all programs
   multCostOfLivingPrograms: false, // true if costOfLivingPrograms string has more than one program
   interestOnly: true, // true if interest-only payments are an option
-  immediateRepayment: false, // true if immediate repayment is an option
+  immediateRepayment: true, // true if immediate repayment is an option
   multipleLoanLengths: true, // true if 36 and 60 month options are both available
-  multipleLoanTypes: false, // true if both IR and IO are available
+  multipleLoanTypes: true, // true if both IR and IO are available
   multiPrograms: true, // only true if there are multiple programs
   onlinePrograms: true, // true if at least one program is remote/online
   schoolHQState: "WA",
@@ -173,12 +173,13 @@ export const programLoanInfo = [
       },
       "Immediate Repayment": {
         apr36: 11.69,
+        apr60: 12.84,
       },
     },
     defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
     showMetros: true, // true if there are multiple metros with different tuition amounts for the same program
-    showLoanTypes: false, // true if both IR and IO are available
-    loanTypes: ["Interest Only"],
+    showLoanTypes: true, // true if both IR and IO are available
+    loanTypes: ["Interest Only", "Immediate Repayment"],
     locations: [
       "Arlington, VA",
       "Berkeley (East Bay), CA",

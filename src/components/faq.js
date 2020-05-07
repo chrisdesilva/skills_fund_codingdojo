@@ -160,9 +160,10 @@ const FAQ = () => {
       <Collapse isOpened={q4} springConfig={{ stiffness: 150, damping: 30 }}>
         <p>
           You have several options, including automated payments! After you
-          apply for a loan, we’ll help you set up your repayment account. About
-          one month after your program starts, you’ll make your first loan
-          payment.
+          apply for a loan, we’ll help you set up your repayment account.
+          Depending on your repayment plan, you’ll make your first payment one
+          month after your program starts or three months after your program
+          ends.
         </p>
         <p>
           You’ll make monthly payments until your loan is fully repaid, and
@@ -202,7 +203,9 @@ const FAQ = () => {
             interest-only payments about one month after your program starts and
             continue those payments for three months after the program ends.
             After this interest-only period, you’ll start making full payments
-            (interest + principal).
+            (interest + principal). Skills Fund’s deferred repayment loans allow
+            you to make no payments during your training. You’ll start making
+            full payments three months after your program.
           </p>
         )}
         <p>
@@ -246,7 +249,7 @@ const FAQ = () => {
         </ul>
       </Collapse>
 
-      <div onClick={() => showq5(!q5)}>
+      {/* <div onClick={() => showq5(!q5)}>
         <h3 className="text-lg uppercase text-primary flex items-center cursor-pointer">
           <span className="text-sm">
             <FaAngleDown />
@@ -279,9 +282,9 @@ const FAQ = () => {
             Wednesday after program start.
           </p>
         )}
-      </Collapse>
+      </Collapse> */}
 
-      <div onClick={() => showq6(!q6)}>
+      {/* <div onClick={() => showq6(!q6)}>
         <h3 className="text-lg uppercase text-primary flex items-center cursor-pointer">
           <span className="text-sm">
             <FaAngleDown />
@@ -321,7 +324,7 @@ const FAQ = () => {
             visit our blog.
           </a>
         </p>
-      </Collapse>
+      </Collapse> */}
 
       <div onClick={() => showq7(!q7)}>
         <h3 className="text-lg uppercase text-primary flex items-center cursor-pointer">
@@ -401,7 +404,10 @@ const FAQ = () => {
         <p>
           There are two ways to qualify for a Skills Fund loan: on your own, or
           with a cosigner. Cosigners can strengthen your application’s overall
-          credit health.{" "}
+          credit health. In some cases, adding a cosigner can improve your
+          interest rate. If you are concerned about your credit health, consider
+          adding a cosigner with strong credit health to improve your interest
+          rate.{" "}
         </p>
         <p>
           If you decide to apply with a cosigner, we’ll evaluate them with the
