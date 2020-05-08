@@ -47,6 +47,21 @@ export const schoolInfo = {
   ],
 }
 
+export const interestRateCards = {
+  immediateRepayment: {
+    interestRate: "8.99 - 10.99%",
+    APR: "11.69% - 13.34%",
+  },
+  interestOnly: {
+    interestRate: "8.99 - 10.99%",
+    APR: "11.09% - 13.04%",
+  },
+  deferred: {
+    interestRate: "9.49 - 11.49%",
+    APR: "11.29% - 12.24%",
+  },
+}
+
 export const faq = {
   // faq section
   costOfLiving: true, // true if at least one program has cost of living included

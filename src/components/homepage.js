@@ -146,7 +146,7 @@ class Homepage extends React.Component {
               ref={this.threesteps}
             /> */}
         {/* <LoanCalculator /> */}
-        <LoanPreview />
+        <LoanPreview onClick={this.scrollToApply} />
         {applicationsLive ? (
           <LoanApp
             ref={this.apply}
