@@ -65,7 +65,7 @@ const LeadCaptureForm = props => {
 
   return (
     <form
-      className="lead_capture program-apply flex flex-col items-center"
+      className="lead_capture program-apply flex flex-col items-center mb-0"
       onSubmit={handleSubmit}
     >
       <label htmlFor="email">Email address</label>
@@ -89,7 +89,7 @@ const LeadCaptureForm = props => {
         </p>
       ) : (
         <input
-          className="cursor-pointer opacityApply uppercase bg-primary p-3 mb-4 w-48 rounded-full shadow-lg text-white"
+          className="cursor-pointer opacityApply uppercase bg-primary p-3 w-48 rounded-full shadow-lg text-white"
           value="Send me the guide!"
           id="leadCaptureSubmitBtn"
           type="submit"

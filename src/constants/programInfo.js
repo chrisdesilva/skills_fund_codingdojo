@@ -48,17 +48,18 @@ export const schoolInfo = {
 }
 
 export const interestRateCards = {
+  // loanPreview.js
   immediateRepayment: {
     interestRate: "8.99 - 10.99%",
-    APR: "11.69% - 13.34%",
+    APR: "12.36% - 13.14%",
   },
   interestOnly: {
     interestRate: "8.99 - 10.99%",
-    APR: "11.09% - 13.04%",
+    APR: "11.26% - 12.84%",
   },
   deferred: {
     interestRate: "9.49 - 11.49%",
-    APR: "11.29% - 12.24%",
+    APR: "11.52% - 13.21%",
   },
 }
 
@@ -401,8 +402,8 @@ export const programLoanInfo = [
       loanTerm60: true,
       "Interest Only": {
         k: 6,
-        apr36: 11.5,
-        apr60: 12.8,
+        apr36: 11.59,
+        apr60: 12.84,
       },
       "Immediate Repayment": {
         apr36: 11.25,
@@ -479,7 +480,7 @@ export const programLoanInfo = [
       loanTerm60: true,
       "Interest Only": {
         k: 6,
-        apr36: 11.5,
+        apr36: 11.59,
         apr60: 12.84,
       },
       "Immediate Repayment": {
