@@ -21,14 +21,14 @@ const LoanPreview = props => {
             <div className="flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-64 text-center">
               <h3>Deferred Repayment</h3>
               <p>Make no payments while you study and for 3 months after</p>
-              <div>
+              {/* <div>
                 <p className="mb-0 text-xs">
                   Interest Rate: {interestRateCards.deferred.interestRate}
                 </p>
                 <p className="mt-0 text-xs">
                   APR: {interestRateCards.deferred.APR}
                 </p>
-              </div>
+              </div> */}
               <p onClick={props.onClick} className="footerLink cursor-pointer">
                 Get Started &rarr;
               </p>
@@ -41,14 +41,14 @@ const LoanPreview = props => {
                 Make low interest-only while you study and for 3 months after
                 completing your program
               </p>
-              <div>
+              {/* <div>
                 <p className="mb-0 text-xs">
                   Interest Rate: {interestRateCards.interestOnly.interestRate}
                 </p>
                 <p className="mt-0 text-xs">
                   APR: {interestRateCards.interestOnly.APR}
                 </p>
-              </div>
+              </div> */}
               <p onClick={props.onClick} className="footerLink cursor-pointer">
                 Get Started &rarr;
               </p>
@@ -60,7 +60,7 @@ const LoanPreview = props => {
               <p>
                 Start paying your loan back 1 month after your program begins
               </p>
-              <div>
+              {/* <div>
                 <p className="mb-0 text-xs">
                   Interest Rate:{" "}
                   {interestRateCards.immediateRepayment.interestRate}
@@ -68,7 +68,7 @@ const LoanPreview = props => {
                 <p className="mt-0 text-xs">
                   APR: {interestRateCards.immediateRepayment.APR}
                 </p>
-              </div>
+              </div> */}
               <p onClick={props.onClick} className="footerLink cursor-pointer">
                 Get Started &rarr;
               </p>
