@@ -195,7 +195,7 @@ class Homepage extends React.Component {
           <ContactForm formName={this.props.formName} />
         </Collapse>
         <CookieBanner />
-        <ApplyFooter onClick={this.scrollToApply} />
+        <ApplyFooter onClick={this.scrollToApply} IP={this.props.IP} />
       </Layout>
     )
   }

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ebook from "../images/WomanClimber_Color.png"
+import { schoolName, skfURL } from "../constants/programInfo"
 
 const LeadCaptureForm = props => {
   const [email, setEmail] = useState("")
@@ -42,9 +42,9 @@ const LeadCaptureForm = props => {
       ],
       context: {
         hutk: hsCookie.hubspotutk,
-        pageUri: `https://codingdojo.skills.fund`,
-        pageName: `${props.schoolName} | Skills Fund`,
-        ipAddress: `${props.IP}`,
+        pageUri: skfURL,
+        pageName: `${schoolName} | Skills Fund`,
+        ipAddress: props.IP,
       },
     }
 
@@ -60,7 +60,6 @@ const LeadCaptureForm = props => {
       .catch(error => console.log("error: ", error))
     showThankYou(true)
     setEmail("")
-    props.trackGA()
   }
 
   return (
@@ -68,7 +67,6 @@ const LeadCaptureForm = props => {
       className="lead_capture program-apply flex flex-col items-center mb-0"
       onSubmit={handleSubmit}
     >
-      <label htmlFor="email">Email address</label>
       <input
         className="border-2 rounded border-primary text-center py-2 mb-4 w-64"
         type="email"
@@ -81,7 +79,7 @@ const LeadCaptureForm = props => {
       <div className="hidden">
         <input type="text" name="Stakeholder Type" value="Student" readOnly />
         <input type="text" name="Lead Cycle" value="Lead Capture" readOnly />
-        <input type="text" name="School" value={props.schoolName} readOnly />
+        <input type="text" name="School" value={schoolName} readOnly />
       </div>
       {thankYou ? (
         <p className="text-center">

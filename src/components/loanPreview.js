@@ -16,11 +16,13 @@ const LoanPreview = props => {
             </div>
           </div>
         </div>
-        <div className="flex justify-around p-4 w-full">
+        <div className="flex flex-col md:flex-row justify-around p-4 w-full">
           {faq.interestOnly && (
-            <div className="flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-64 text-center">
+            <div className="flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-full m-2 lg:w-64 text-center">
               <h3>Deferred Repayment</h3>
-              <p>Make no payments while you study and for 3 months after</p>
+              <p>
+                Make no payments while you study and for three months after.
+              </p>
               {/* <div>
                 <p className="mb-0 text-xs">
                   Interest Rate: {interestRateCards.deferred.interestRate}
@@ -35,11 +37,11 @@ const LoanPreview = props => {
             </div>
           )}
           {faq.interestOnly && (
-            <div className="flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-64 text-center">
+            <div className="flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-full m-2 lg:w-64 text-center">
               <h3>Interest Only</h3>
               <p>
-                Make low interest-only while you study and for 3 months after
-                completing your program
+                Make low interest-only payments while you study and for three
+                months after completing your program.
               </p>
               {/* <div>
                 <p className="mb-0 text-xs">
@@ -55,10 +57,10 @@ const LoanPreview = props => {
             </div>
           )}
           {faq.immediateRepayment && (
-            <div className="flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-64 text-center ">
+            <div className="flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-full m-2 lg:w-64 text-center ">
               <h3>Immediate Repayment</h3>
               <p>
-                Start paying your loan back 1 month after your program begins
+                Start paying your loan back one month after your program begins.
               </p>
               {/* <div>
                 <p className="mb-0 text-xs">
