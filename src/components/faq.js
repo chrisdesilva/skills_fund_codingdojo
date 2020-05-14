@@ -403,10 +403,8 @@ const FAQ = () => {
         <p>
           There are two ways to qualify for a Skills Fund loan: on your own, or
           with a cosigner. Cosigners can strengthen your application’s overall
-          credit health. In some cases, adding a cosigner can improve your
-          interest rate. If you are concerned about your credit health, consider
-          adding a cosigner with strong credit health to improve your interest
-          rate.{" "}
+          credit health. If you are concerned about your credit health, consider
+          adding a cosigner with strong credit health.{" "}
         </p>
         <p>
           If you decide to apply with a cosigner, we’ll evaluate them with the
