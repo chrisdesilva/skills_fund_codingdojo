@@ -48,18 +48,26 @@ export const schoolInfo = {
 }
 
 export const interestRateCards = {
-  // loanPreview.js
+  // 3 month program, 3 months grace for term details section
+  APR36: "9.05 - 17.21%",
+  APR60: "10.04 - 17.24%",
   immediateRepayment: {
-    interestRate: "8.99 - 10.99%",
-    APR: "12.36% - 13.14%",
+    int36: "6.50 - 13.75%",
+    int60: "8.25 - 15.00%",
+    APR36: "9.82% - 17.21%",
+    APR60: "10.34% - 17.24%",
   },
   interestOnly: {
-    interestRate: "8.99 - 10.99%",
-    APR: "11.26% - 12.84%",
+    int36: "6.50 - 13.75%",
+    int60: "8.25 - 15.00%",
+    APR36: "9.05% - 16.47%",
+    APR60: "10.04% - 16.95%",
   },
   deferred: {
-    interestRate: "9.49 - 11.49%",
-    APR: "11.52% - 13.21%",
+    int36: "7.00 - 14.25%",
+    int60: "8.75 - 15.50%",
+    APR36: "9.46% - 16.21%",
+    APR60: "10.45% - 17.24%",
   },
 }
 
@@ -81,6 +89,8 @@ export const faq = {
   exampleLoanAmount: "$10,000",
   interestRate36: "8.99%",
   interestRate60: "10.99%",
+  deferred36: "8.99%",
+  deferred60: "10.99%",
   APR36: "11.50 - 11.59%",
   APR60: "12.80 - 12.84%",
   IOPayment36: "$78.66",
