@@ -77,7 +77,7 @@ export const faq = {
   costOfLivingPrograms: "", // leave as empty string is cost of living availability is the same across all programs
   multCostOfLivingPrograms: false, // true if costOfLivingPrograms string has more than one program
   interestOnly: true, // true if interest-only payments are an option
-  immediateRepayment: true, // true if immediate repayment is an option
+  immediateRepayment: false, // true if immediate repayment is an option
   multipleLoanLengths: true, // true if 36 and 60 month options are both available
   multipleLoanTypes: true, // true if both IR and IO are available
   multiPrograms: true, // only true if there are multiple programs
@@ -145,23 +145,6 @@ export const skfURL = "https://codingdojo.skills.fund" // update with Skills Fun
 
 export const headline = "Learn to Code at Coding Dojo" // update headline as appropriate
 
-export const leadContent = {
-  header: "Your last step on the path toward changing your career",
-  paragraph: `${schoolName} designs its programs to cover multiple stacks of programming languages to help graduates develop a diverse skill-set. ${schoolName} partners with Skills Fund to offer tuition${
-    faq.costOfLiving ? " and cost of living" : ""
-  } financing so more students like you can access their program.`,
-}
-
-export const threeStepCardText = {
-  step1: "",
-  step2: {
-    header: "select your program",
-    text:
-      "Choose between the Onsite Bootcamp, Online Full-Time Bootcamp, Online Part-Time Bootcamp, and Data Science programs.",
-  },
-  step3: `You'll be on your way to an exciting career in tech as part of ${schoolName}'s powerful network.`,
-}
-
 export const netlifyFormName = "codingdojo_contact"
 
 export const GATracking = "UA-68312423-1"
@@ -180,7 +163,7 @@ export const interestRates = {
   ir36: 8.99,
   ir60: 10.99,
 }
-export const moreThanSixPrograms = false // set to true if there are 7 or more programs in the loan application. True will render a dropdown menu, false will render buttons for each program.
+export const moreThanSixPrograms = true // set to true if there are 7 or more programs in the loan application. True will render a dropdown menu, false will render buttons for each program.
 
 export const programLoanInfo = [
   // update with program names and corresponding loan URLs with market segment code from Master Loan Parameters
@@ -199,13 +182,12 @@ export const programLoanInfo = [
       },
       "Immediate Repayment": {
         apr36: 11.69,
-        apr60: 12.84,
       },
     },
     defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
     showMetros: true, // true if there are multiple metros with different tuition amounts for the same program
-    showLoanTypes: true, // true if both IR and IO are available
-    loanTypes: ["Interest Only", "Immediate Repayment"],
+    showLoanTypes: false, // true if both IR and IO are available
+    loanTypes: ["Interest Only"],
     locations: [
       "Arlington, VA",
       "Berkeley (East Bay), CA",
@@ -412,8 +394,8 @@ export const programLoanInfo = [
       loanTerm60: true,
       "Interest Only": {
         k: 6,
-        apr36: 11.59,
-        apr60: 12.84,
+        apr36: 11.5,
+        apr60: 12.8,
       },
       "Immediate Repayment": {
         apr36: 11.25,
@@ -490,7 +472,7 @@ export const programLoanInfo = [
       loanTerm60: true,
       "Interest Only": {
         k: 6,
-        apr36: 11.59,
+        apr36: 11.5,
         apr60: 12.84,
       },
       "Immediate Repayment": {
@@ -593,6 +575,240 @@ export const programLoanInfo = [
             k: 10,
             apr36: 11.26,
             apr60: 12.69,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+      {
+        location: "Metro B",
+        loanInfo: {
+          maxLoanAmt: 15545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+      {
+        location: "Metro C",
+        loanInfo: {
+          maxLoanAmt: 20545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "Online Part-time (1 Stack)",
+    url: "https://my.skills.fund/application?lenderCode=SFCDOPT1S20",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 6995,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        k: 7,
+        apr36: 11.5,
+        apr60: 12.58,
+      },
+      "Immediate Repayment": {
+        apr36: 11.25,
+        apr60: 12.55,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false,
+    showLoanTypes: false,
+    loanTypes: ["Interest Only"],
+    locations: ["Metro A", "Metro B", "Metro C"],
+    metros: [
+      {
+        location: "Metro A",
+        loanInfo: {
+          // match loanInfo to Program 3 loanInfo above
+          maxLoanAmt: 6995,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 7,
+            apr36: 11.5,
+            apr60: 12.58,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+      {
+        location: "Metro B",
+        loanInfo: {
+          maxLoanAmt: 15545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+      {
+        location: "Metro C",
+        loanInfo: {
+          maxLoanAmt: 20545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "Online Part-time (2 Stacks)",
+    url: "https://my.skills.fund/application?lenderCode=SFCDOPT2S20",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 10995,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        k: 9,
+        apr36: 11.34,
+        apr60: 12.73,
+      },
+      "Immediate Repayment": {
+        apr36: 11.25,
+        apr60: 12.55,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false,
+    showLoanTypes: false,
+    loanTypes: ["Interest Only"],
+    locations: ["Metro A", "Metro B", "Metro C"],
+    metros: [
+      {
+        location: "Metro A",
+        loanInfo: {
+          // match loanInfo to Program 3 loanInfo above
+          maxLoanAmt: 10995,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 9,
+            apr36: 11.34,
+            apr60: 12.73,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+      {
+        location: "Metro B",
+        loanInfo: {
+          maxLoanAmt: 15545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+      {
+        location: "Metro C",
+        loanInfo: {
+          maxLoanAmt: 20545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.59,
+            apr60: 12.84,
+          },
+          "Immediate Repayment": {
+            apr36: 11.25,
+            apr60: 12.55,
+          },
+        },
+      },
+    ],
+  },
+  {
+    name: "Online Part-time (3 Stacks)",
+    url: "https://my.skills.fund/application?lenderCode=SFCDOPT3S20",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 14495,
+      loanTerm36: true,
+      loanTerm60: true,
+      "Interest Only": {
+        k: 11,
+        apr36: 11.2,
+        apr60: 12.66,
+      },
+      "Immediate Repayment": {
+        apr36: 11.25,
+        apr60: 12.55,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false,
+    showLoanTypes: false,
+    loanTypes: ["Interest Only"],
+    locations: ["Metro A", "Metro B", "Metro C"],
+    metros: [
+      {
+        location: "Metro A",
+        loanInfo: {
+          // match loanInfo to Program 3 loanInfo above
+          maxLoanAmt: 14495,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 11,
+            apr36: 11.2,
+            apr60: 12.66,
           },
           "Immediate Repayment": {
             apr36: 11.25,

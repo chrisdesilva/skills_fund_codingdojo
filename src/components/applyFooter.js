@@ -5,7 +5,7 @@ import LeadCaptureForm from "./leadcaptureform"
 const ApplyFooter = props => {
   return (
     <div className="flex flex-col md:flex-row justify-center py-8 px-4 bg-gray-200">
-      <div className="flex flex-col items-center justify-between my-2 lg:mx-10 w-full lg:w-1/3 rounded  bg-white border-primary border-t-8 py-4">
+      <div className="flex flex-col items-center justify-between my-2 lg:mx-10 w-full lg:w-1/3 rounded  bg-white border-primary border-t-8 p-4">
         <div>
           <h2 className="font-bold text-center">Ready to Get Started?</h2>
           <p className="text-center">
@@ -21,7 +21,7 @@ const ApplyFooter = props => {
           id="applyFooter"
         />
       </div>
-      <div className="flex flex-col items-center justify-between my-2 lg:mx-10 w-full lg:w-1/3 rounded  bg-white border-primary border-t-8 py-4">
+      <div className="flex flex-col items-center justify-between my-2 lg:mx-10 w-full lg:w-1/3 rounded  bg-white border-primary border-t-8 p-4">
         <div>
           <h2 className="font-bold text-center">Want to Learn More?</h2>
           <p className="text-center">
