@@ -47,6 +47,63 @@ export const schoolInfo = {
   ],
 }
 
+export const interestRateCards = {
+  // 3 month program, 3 months grace for term details section
+  APR36: "9.05 - 17.21%",
+  APR60: "10.04 - 17.24%",
+  immediateRepayment: {
+    int36: "6.50 - 13.75%",
+    int60: "8.25 - 15.00%",
+    APR36: "9.82% - 17.21%",
+    APR60: "10.34% - 17.24%",
+  },
+  interestOnly: {
+    int36: "6.50 - 13.75%",
+    int60: "8.25 - 15.00%",
+    APR36: "9.05% - 16.47%",
+    APR60: "10.04% - 16.95%",
+  },
+  deferred: {
+    int36: "7.00 - 14.25%",
+    int60: "8.75 - 15.50%",
+    APR36: "9.46% - 16.21%",
+    APR60: "10.45% - 17.24%",
+  },
+}
+
+export const previewText = {
+  headline: "Simple. Flexible.",
+  subheadline:
+    "We offer loans tailored to your needs. Preview your options and select the right financing solution for you.",
+  // headline: "Simple. Clear.",
+  // subheadline: "We offer a straightforward loan so you can focus on your program and transform your future.",
+  cards: [
+    {
+      heading: "Deferred Repayment",
+      body: "Make no payments while you study and for three months after.",
+    },
+    {
+      heading: "Interest Only",
+      body:
+        "Make low interest-only payments while you study and for three months after completing your program.",
+    },
+    // {
+    //   heading: "Immediate Repayment",
+    //   body: "Start paying your loan back one month after your program begins.",
+    // },
+    // {
+    //   heading: "36-Month Loan",
+    //   body:
+    //     "Pay off your loan faster. Start paying your loan back one month after your program begins, and make 36 monthly payments until your loan is repaid.",
+    // },
+    // {
+    //   heading: "60-Month Loan",
+    //   body:
+    //     "Make smaller monthly payments. Start paying your loan back one month after your program begins, and make 60 monthly payments until your loan is repaid.",
+    // },
+  ],
+}
+
 export const faq = {
   // faq section
   costOfLiving: true, // true if at least one program has cost of living included
@@ -55,7 +112,7 @@ export const faq = {
   interestOnly: true, // true if interest-only payments are an option
   immediateRepayment: false, // true if immediate repayment is an option
   multipleLoanLengths: true, // true if 36 and 60 month options are both available
-  multipleLoanTypes: false, // true if both IR and IO are available
+  multipleLoanTypes: true, // true if both IR and IO are available
   multiPrograms: true, // only true if there are multiple programs
   onlinePrograms: true, // true if at least one program is remote/online
   schoolHQState: "WA",
@@ -65,6 +122,8 @@ export const faq = {
   exampleLoanAmount: "$10,000",
   interestRate36: "8.99%",
   interestRate60: "10.99%",
+  deferred36: "8.99%",
+  deferred60: "10.99%",
   APR36: "11.50 - 11.59%",
   APR60: "12.80 - 12.84%",
   IOPayment36: "$78.66",
@@ -136,23 +195,6 @@ export const schoolURL = "https://www.codingdojo.com/" // update with url of sch
 export const skfURL = "https://codingdojo.skills.fund" // update with Skills Fund url
 
 export const headline = "Learn to Code at Coding Dojo" // update headline as appropriate
-
-export const leadContent = {
-  header: "Your last step on the path toward changing your career",
-  paragraph: `${schoolName} designs its programs to cover multiple stacks of programming languages to help graduates develop a diverse skill-set. ${schoolName} partners with Skills Fund to offer tuition${
-    faq.costOfLiving ? " and cost of living" : ""
-  } financing so more students like you can access their program.`,
-}
-
-export const threeStepCardText = {
-  step1: "",
-  step2: {
-    header: "select your program",
-    text:
-      "Choose between the Onsite Bootcamp, Online Full-Time Bootcamp, Online Part-Time Bootcamp, and Data Science programs.",
-  },
-  step3: `You'll be on your way to an exciting career in tech as part of ${schoolName}'s powerful network.`,
-}
 
 export const netlifyFormName = "codingdojo_contact"
 
