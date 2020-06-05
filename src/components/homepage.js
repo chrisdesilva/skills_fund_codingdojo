@@ -27,7 +27,7 @@ class Homepage extends React.Component {
     super(props)
     this.state = {
       termInfo: false,
-      faq: false,
+      faq: true,
       eligibility: false,
       contact: false,
       popup: true,
