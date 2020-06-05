@@ -17,8 +17,7 @@ const Eligibility = () => (
       </li>
       <li>
         <strong>
-          You have been accepted, enrolled, and are attending a Skills Fund
-          partner school
+          You are enrolled in a program at a Skills Fund partner school
         </strong>
       </li>
       <li>
