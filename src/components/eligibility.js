@@ -28,10 +28,10 @@ const Eligibility = () => (
     </ul>
     <p>
       Worried about your credit health? You may either add a cosigner to begin
-      your loan application, or following credit denial, you may be given the
+      your loan application, or following a credit denial, you may be given the
       opportunity to add a cosigner.
     </p>
-    <p>And there's no prepayment penalty with a Skills Fund loan.</p>
+    <p>And remember, there's no prepayment penalty with a Skills Fund loan.</p>
   </div>
 )
 

@@ -400,7 +400,7 @@ const FAQ = () => {
         </h3>
       </div>
       <Collapse isOpened={q9} springConfig={{ stiffness: 150, damping: 30 }}>
-        <p>
+        <p className="mb-0 pb-4">
           There are two ways to qualify for a Skills Fund loan: on your own, or
           with a cosigner. Cosigners can strengthen your application’s overall
           credit health. In some cases, adding a cosigner can improve your
