@@ -89,7 +89,7 @@ export const previewText = {
         "Start small by making lower interest-only payments during school & for three months after. Then you’ll make full payments (interest + principal).",
     },
     {
-      heading: "Immediate Repayment",
+      heading: "Immediate Repayment Loan",
       body:
         "Get more of your loan balance behind you by making full payments (interest + principal) beginning about one month after your program starts.",
     },
