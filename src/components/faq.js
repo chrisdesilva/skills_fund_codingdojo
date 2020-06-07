@@ -17,6 +17,7 @@ const FAQ = () => {
   const [q10, showq10] = useState(false)
   const [q11, showq11] = useState(false)
   const [q12, showq12] = useState(false)
+  const [q13, showq13] = useState(false)
 
   return (
     <div className="mx-2 lg:mx-10 p-8 shadow rounded">
@@ -498,6 +499,21 @@ const FAQ = () => {
             credit history resources
           </a>{" "}
           today.
+        </p>
+      </Collapse>
+
+      <div onClick={() => showq13(!q13)}>
+        <h3 className="text-lg uppercase text-primary flex items-center cursor-pointer">
+          <span className="text-sm">
+            <FaAngleDown />
+          </span>
+          WHAT IS THE INTEREST RATE AND APR RANGE FOR THIS LOAN?
+        </h3>
+      </div>
+      <Collapse isOpened={q13} springConfig={{ stiffness: 150, damping: 30 }}>
+        <p className="mb-0 pb-4">
+          To see the range of available interest rates and APRs for Skills Fund
+          loans, please view the Term Details on this page.
         </p>
       </Collapse>
 

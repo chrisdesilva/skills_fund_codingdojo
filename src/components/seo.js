@@ -33,7 +33,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.title} Tuition Loans`}
       meta={[
         {
           name: `description`,
@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `keywords`,
-          content: site.siteMetadata.keywords
+          content: site.siteMetadata.keywords,
         },
         {
           property: `og:title`,

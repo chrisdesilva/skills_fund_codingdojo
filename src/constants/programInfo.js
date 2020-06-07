@@ -72,25 +72,27 @@ export const interestRateCards = {
 }
 
 export const previewText = {
-  headline: "Simple. Flexible.",
+  headline: "Flexible Payment Options",
   subheadline:
-    "We offer loans tailored to your needs. Preview your options and select the right financing solution for you.",
+    "You deserve a valuable education, and we think financing it should be easy. We offer several loan repayment plans so you can select the right financing solution for you. No matter which option you choose, you can be sure your interest rate won’t change during repayment, and you have the flexibility to make early payments without any prepayment fees.",
   // headline: "Simple. Clear.",
   // subheadline: "We offer a straightforward loan so you can focus on your program and transform your future.",
   cards: [
     {
-      heading: "Deferred Repayment",
-      body: "Make no payments while you study and for three months after.",
+      heading: "Deferred Repayment Loan",
+      body:
+        "Make no payments during school & for three months after. Then you'll make full payments (interest + principal).",
     },
     {
-      heading: "Interest Only",
+      heading: "Interest Only Loan",
       body:
-        "Make low interest-only payments while you study and for three months after completing your program.",
+        "Start small by making lower interest-only payments during school & for three months after. Then you’ll make full payments (interest + principal).",
     },
-    // {
-    //   heading: "Immediate Repayment",
-    //   body: "Start paying your loan back one month after your program begins.",
-    // },
+    {
+      heading: "Immediate Repayment",
+      body:
+        "Get more of your loan balance behind you by making full payments (interest + principal) beginning about one month after your program starts.",
+    },
     // {
     //   heading: "36-Month Loan",
     //   body:
