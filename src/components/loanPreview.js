@@ -15,9 +15,9 @@ const LoanPreview = props => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-center p-4 w-full">
+        <div className="flex flex-col lg:flex-row justify-center p-4 w-full">
           {previewText.cards.map(card => (
-            <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl my-2 mx-0 md:mx-8 text-center">
+            <div className="w-full md:w-1/2 xl:w-1/3 flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl my-2 mx-auto lg:mx-8 text-center">
               <h3 className>{card.heading}</h3>
               <p className>{card.body}</p>
               {card.heading === "Deferred Repayment" && (
