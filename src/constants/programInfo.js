@@ -106,7 +106,7 @@ export const previewText = {
 
 export const faq = {
   // faq section
-  costOfLiving: true, // true if at least one program has cost of living included
+  costOfLiving: false, // true if at least one program has cost of living included
   costOfLivingPrograms: "", // leave as empty string is cost of living availability is the same across all programs
   multCostOfLivingPrograms: false, // true if costOfLivingPrograms string has more than one program
   interestOnly: true, // true if interest-only payments are an option
@@ -134,7 +134,7 @@ export const faq = {
     {
       programName: "Coding Dojo's Onsite Bootcamp",
       maxAmount: "the max loan amount for tuition for your metro",
-      col: true,
+      col: false,
       colAmount: "$4,500",
     },
     {
@@ -152,7 +152,7 @@ export const faq = {
     {
       programName: "Coding Dojo's Data Science program",
       maxAmount: "$14,995",
-      col: true,
+      col: false,
       colAmount: "$4,500",
     },
     {

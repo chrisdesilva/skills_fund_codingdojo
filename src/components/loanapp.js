@@ -357,11 +357,11 @@ const LoanApp = React.forwardRef((props, ref) => {
               readOnly
             />
           </div>
-          <span className="text-center text-sm lg:w-1/2 my-4">
+          {/* <span className="text-center text-sm lg:w-1/2 my-4">
             <strong>Please note:</strong> Coding Dojo recently set the maximum
             cost of living amount to $4,500. Any cost of living amount entered
             in the loan application that exceeds $4,500 will be reduced.
-          </span>
+          </span> */}
           {programName === "Data Science" ? (
             <input
               className="opacityApply uppercase bg-primary p-3 my-4 w-48 rounded-full text-white cursor-pointer"
