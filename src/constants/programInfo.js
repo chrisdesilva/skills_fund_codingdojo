@@ -1066,162 +1066,162 @@ export const programLoanInfo = [
       },
     ],
   },
-  {
-    name: "Product Management Part-Time",
-    url: "https://my.skills.fund/application?lenderCode=SFCDPMPT20",
-    loanInfo: {
-      // match loanInfo in first metro below
-      maxLoanAmt: 14495,
-      loanTerm36: true,
-      loanTerm60: true,
-      "Interest Only": {
-        k: 11,
-        apr36: 11.2,
-        apr60: 12.66,
-      },
-      "Immediate Repayment": {
-        apr36: 11.25,
-        apr60: 12.55,
-      },
-    },
-    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
-    showMetros: false,
-    showLoanTypes: false,
-    loanTypes: ["Interest Only"],
-    locations: ["Metro A", "Metro B", "Metro C"],
-    metros: [
-      {
-        location: "Metro A",
-        loanInfo: {
-          // match loanInfo to Program 3 loanInfo above
-          maxLoanAmt: 14495,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 11,
-            apr36: 11.2,
-            apr60: 12.66,
-          },
-          "Immediate Repayment": {
-            apr36: 11.25,
-            apr60: 12.55,
-          },
-        },
-      },
-      {
-        location: "Metro B",
-        loanInfo: {
-          maxLoanAmt: 15545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 6,
-            apr36: 11.59,
-            apr60: 12.84,
-          },
-          "Immediate Repayment": {
-            apr36: 11.25,
-            apr60: 12.55,
-          },
-        },
-      },
-      {
-        location: "Metro C",
-        loanInfo: {
-          maxLoanAmt: 20545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 6,
-            apr36: 11.59,
-            apr60: 12.84,
-          },
-          "Immediate Repayment": {
-            apr36: 11.25,
-            apr60: 12.55,
-          },
-        },
-      },
-    ],
-  },
-  {
-    name: "iOS Part-Time Bootcamp",
-    url: "https://my.skills.fund/application?lenderCode=SFCDIPTB20",
-    loanInfo: {
-      // match loanInfo in first metro below
-      maxLoanAmt: 14495,
-      loanTerm36: true,
-      loanTerm60: true,
-      "Interest Only": {
-        k: 11,
-        apr36: 11.2,
-        apr60: 12.66,
-      },
-      "Immediate Repayment": {
-        apr36: 11.25,
-        apr60: 12.55,
-      },
-    },
-    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
-    showMetros: false,
-    showLoanTypes: false,
-    loanTypes: ["Interest Only"],
-    locations: ["Metro A", "Metro B", "Metro C"],
-    metros: [
-      {
-        location: "Metro A",
-        loanInfo: {
-          // match loanInfo to Program 3 loanInfo above
-          maxLoanAmt: 14495,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 11,
-            apr36: 11.2,
-            apr60: 12.66,
-          },
-          "Immediate Repayment": {
-            apr36: 11.25,
-            apr60: 12.55,
-          },
-        },
-      },
-      {
-        location: "Metro B",
-        loanInfo: {
-          maxLoanAmt: 15545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 6,
-            apr36: 11.59,
-            apr60: 12.84,
-          },
-          "Immediate Repayment": {
-            apr36: 11.25,
-            apr60: 12.55,
-          },
-        },
-      },
-      {
-        location: "Metro C",
-        loanInfo: {
-          maxLoanAmt: 20545,
-          loanTerm36: true,
-          loanTerm60: true,
-          "Interest Only": {
-            k: 6,
-            apr36: 11.59,
-            apr60: 12.84,
-          },
-          "Immediate Repayment": {
-            apr36: 11.25,
-            apr60: 12.55,
-          },
-        },
-      },
-    ],
-  },
+  // {
+  //   name: "Product Management Part-Time",
+  //   url: "https://my.skills.fund/application?lenderCode=SFCDPMPT20",
+  //   loanInfo: {
+  //     // match loanInfo in first metro below
+  //     maxLoanAmt: 14495,
+  //     loanTerm36: true,
+  //     loanTerm60: true,
+  //     "Interest Only": {
+  //       k: 11,
+  //       apr36: 11.2,
+  //       apr60: 12.66,
+  //     },
+  //     "Immediate Repayment": {
+  //       apr36: 11.25,
+  //       apr60: 12.55,
+  //     },
+  //   },
+  //   defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+  //   showMetros: false,
+  //   showLoanTypes: false,
+  //   loanTypes: ["Interest Only"],
+  //   locations: ["Metro A", "Metro B", "Metro C"],
+  //   metros: [
+  //     {
+  //       location: "Metro A",
+  //       loanInfo: {
+  //         // match loanInfo to Program 3 loanInfo above
+  //         maxLoanAmt: 14495,
+  //         loanTerm36: true,
+  //         loanTerm60: true,
+  //         "Interest Only": {
+  //           k: 11,
+  //           apr36: 11.2,
+  //           apr60: 12.66,
+  //         },
+  //         "Immediate Repayment": {
+  //           apr36: 11.25,
+  //           apr60: 12.55,
+  //         },
+  //       },
+  //     },
+  //     {
+  //       location: "Metro B",
+  //       loanInfo: {
+  //         maxLoanAmt: 15545,
+  //         loanTerm36: true,
+  //         loanTerm60: true,
+  //         "Interest Only": {
+  //           k: 6,
+  //           apr36: 11.59,
+  //           apr60: 12.84,
+  //         },
+  //         "Immediate Repayment": {
+  //           apr36: 11.25,
+  //           apr60: 12.55,
+  //         },
+  //       },
+  //     },
+  //     {
+  //       location: "Metro C",
+  //       loanInfo: {
+  //         maxLoanAmt: 20545,
+  //         loanTerm36: true,
+  //         loanTerm60: true,
+  //         "Interest Only": {
+  //           k: 6,
+  //           apr36: 11.59,
+  //           apr60: 12.84,
+  //         },
+  //         "Immediate Repayment": {
+  //           apr36: 11.25,
+  //           apr60: 12.55,
+  //         },
+  //       },
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "iOS Part-Time Bootcamp",
+  //   url: "https://my.skills.fund/application?lenderCode=SFCDIPTB20",
+  //   loanInfo: {
+  //     // match loanInfo in first metro below
+  //     maxLoanAmt: 14495,
+  //     loanTerm36: true,
+  //     loanTerm60: true,
+  //     "Interest Only": {
+  //       k: 11,
+  //       apr36: 11.2,
+  //       apr60: 12.66,
+  //     },
+  //     "Immediate Repayment": {
+  //       apr36: 11.25,
+  //       apr60: 12.55,
+  //     },
+  //   },
+  //   defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+  //   showMetros: false,
+  //   showLoanTypes: false,
+  //   loanTypes: ["Interest Only"],
+  //   locations: ["Metro A", "Metro B", "Metro C"],
+  //   metros: [
+  //     {
+  //       location: "Metro A",
+  //       loanInfo: {
+  //         // match loanInfo to Program 3 loanInfo above
+  //         maxLoanAmt: 14495,
+  //         loanTerm36: true,
+  //         loanTerm60: true,
+  //         "Interest Only": {
+  //           k: 11,
+  //           apr36: 11.2,
+  //           apr60: 12.66,
+  //         },
+  //         "Immediate Repayment": {
+  //           apr36: 11.25,
+  //           apr60: 12.55,
+  //         },
+  //       },
+  //     },
+  //     {
+  //       location: "Metro B",
+  //       loanInfo: {
+  //         maxLoanAmt: 15545,
+  //         loanTerm36: true,
+  //         loanTerm60: true,
+  //         "Interest Only": {
+  //           k: 6,
+  //           apr36: 11.59,
+  //           apr60: 12.84,
+  //         },
+  //         "Immediate Repayment": {
+  //           apr36: 11.25,
+  //           apr60: 12.55,
+  //         },
+  //       },
+  //     },
+  //     {
+  //       location: "Metro C",
+  //       loanInfo: {
+  //         maxLoanAmt: 20545,
+  //         loanTerm36: true,
+  //         loanTerm60: true,
+  //         "Interest Only": {
+  //           k: 6,
+  //           apr36: 11.59,
+  //           apr60: 12.84,
+  //         },
+  //         "Immediate Repayment": {
+  //           apr36: 11.25,
+  //           apr60: 12.55,
+  //         },
+  //       },
+  //     },
+  //   ],
+  // },
   // {
   //   name: "Coding & Innovation Bootcamp",
   //   url: "https://my.skills.fund/application?lenderCode=SFCDCIB20",
