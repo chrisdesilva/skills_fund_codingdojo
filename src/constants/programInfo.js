@@ -151,7 +151,7 @@ export const faq = {
     },
     {
       programName: "Coding Dojo's Part-Time Online Data Science program",
-      maxAmount: "$3,995",
+      maxAmount: "$4,995",
       col: false,
       colAmount: "$3,995",
     },
