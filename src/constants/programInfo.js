@@ -175,7 +175,7 @@ export const faq = {
     },
     {
       programName: "Coding Dojo's Online Part-time (3 Stacks)",
-      maxAmount: "$15,495",
+      maxAmount: "$15,995",
       col: false,
       colAmount: "$4,500",
     },
